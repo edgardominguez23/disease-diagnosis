@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block content %}      
+
+<div>
+    {% if user.is_authenticated %}
+    <div class="alert alert-success" role="alert">
+        <h3>Welcome {{ user.username }}!</h3>
+        <a href="{% url 'logout' %}">Logout?</a>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}
