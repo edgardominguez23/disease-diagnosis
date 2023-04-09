@@ -142,3 +142,4 @@ INTERNAL_IPS = [
 ]
 
 LOGIN_REDIRECT_URL = 'admin/home'
+LOGIN_URL = 'login'
