@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'django_browser_reload',
+    'fontawesomefree',
     'user',
     'main',
     'ai',
@@ -141,5 +142,5 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-LOGIN_REDIRECT_URL = 'admin/home'
+LOGIN_REDIRECT_URL = 'admin'
 LOGIN_URL = 'login'

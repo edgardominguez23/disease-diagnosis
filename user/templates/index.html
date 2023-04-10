@@ -6,11 +6,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disease Diagnosis</title>
+    <!-- One file includes all the Font Awesome Free icons and utilities -->
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
     {% tailwind_css %}
   </head>
  <body class="bg-[#1C1C39]">
-    {% block content %}
-
-    {% endblock %}
+    <div class="flex">
+      {% include 'layouts/menu-vertical.html' %}
+      <main class="container mx-auto p-8">
+        {% block content %}
+        <h1 class="text-2xl font-bold mb-4">Bienvenido</h1>
+        <p>Este es el contenido principal de la página.</p>
+        {% endblock %}
+      </main>
+    </div>
   </body>
 </html>
