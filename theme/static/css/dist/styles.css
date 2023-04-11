@@ -720,6 +720,10 @@ select {
   position: static;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
 .mx-20 {
   margin-left: 5rem;
   margin-right: 5rem;
@@ -978,6 +982,26 @@ select {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#F2F2F2\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 242 242 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#BFBFE1\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 191 225 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#3E3E6D\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(62 62 109 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#5A5A94\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(90 90 148 / var(--tw-bg-opacity));
+}
+
 .fill-current {
   fill: currentColor;
 }
@@ -1036,6 +1060,11 @@ select {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .pl-3 {
