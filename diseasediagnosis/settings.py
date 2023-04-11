@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'user',
     'main',
     'ai',
+    'unicorn',
 ]
 
 MIDDLEWARE = [
