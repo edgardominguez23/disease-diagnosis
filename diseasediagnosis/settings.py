@@ -39,15 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_unicorn',
     'tailwind',
     'theme',
     'django_browser_reload',
+    'django_unicorn',
+    'unicorn',
     'fontawesomefree',
     'user',
     'main',
     'ai',
-    'unicorn',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_browser_reload.middleware.BrowserReloadMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'diseasediagnosis.urls'
