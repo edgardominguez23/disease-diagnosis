@@ -6,11 +6,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disease Diagnosis</title>
-    {% tailwind_css %}
-  </head>
- <body class="bg-[#1C1C39]">
-    {% block content %}
 
+    <!-- One file includes all the Font Awesome Free icons and utilities -->
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    {% tailwind_css %}
+    {% block head %}
+    {% endblock %}
+  </head>
+ <body class="bg-[#525276]">
+    {% csrf_token %}
+    <div class="flex">
+      {% include 'layouts/menu-vertical.html' %}
+      <main class="container mx-auto p-8">
+        {% block content %}
+        {% endblock %}
+      </main>
+    </div>
+    {% block scripts %}
     {% endblock %}
   </body>
 </html>

@@ -1,0 +1,88 @@
+<style>
+  .activate {
+    background-color: #3b82f6;
+  }
+</style>
+
+<nav id="menu" class="bg-[#1C1C39] w-full md:w-64 flex flex-col h-screen text-white rounded-md shadow-2xl">
+  <h2 class="text-lg font-bold bg-[#5A5A94] p-4 text-center">Menú</h2>
+  <ul class="px-4 py-4">
+    <a href="#">
+      <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
+        <i class="fa-solid fa-gears fa-lg mr-3"></i> Roles
+      </li>
+    </a>
+
+    <a href="#">
+      <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
+        <i class="fa-solid fa-key fa-lg mr-3"></i> Permisos
+      </li>
+    </a>
+
+    <a href="#">
+      <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
+        <i class="fa-solid fa-user-shield fa-lg mr-3"></i> Usuarios
+      </li>
+    </a>
+
+    <a href="{% url 'consultorios-list' %}">
+      <li id="consultorios" class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
+        <i class="fa-solid fa-notes-medical fa-lg mr-3"></i> Consultorios
+      </li>
+    </a>
+
+    <a href="{% url 'pacientes-list' %}">
+      <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
+        <i class="fa-solid fa-users fa-lg mr-3"></i> Pacientes
+      </li>
+    </a>
+
+    <a href="#">
+      <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
+        <i class="fa-solid fa-disease fa-lg mr-3"></i> Enfermedades
+      </li>
+    </a>
+    
+    <a href="{% url 'signos-list' %}">
+      <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
+        <i class="fa-solid fa-heart-pulse fa-lg mr-3"></i> Signos
+      </li>
+    </a>
+    
+    <a href="{% url 'sintomas-list' %}">
+      <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
+        <i class="fa-solid fa-person fa-lg mr-3"></i> Sintomas
+      </li>
+    </a>
+    
+    <a href="{% url 'pruebas-list' %}">
+      <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
+        <i class="fa-solid fa-clipboard-list fa-lg mr-3"></i> Pruebas
+      </li>
+    </a>
+  </ul>
+</nav>
+
+<script>
+  const url = window.location.pathname;
+
+  const menuItems = document.querySelectorAll('#menu a');
+
+  menuItems.forEach((item) =>  {
+
+    let linkUrl = item.getAttribute('href');
+
+    if(url.includes(linkUrl)) {
+      const previousSelectedItem = document.querySelector('.activate');
+      
+      if (previousSelectedItem) {
+        previousSelectedItem.classList.remove('activate');
+      }
+
+      item.querySelector('li').classList.add('activate');
+    }
+  })
+</script>
+
+
+  

@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'django_browser_reload',
+    'django_unicorn',
+    'unicorn',
+    'fontawesomefree',
     'user',
     'main',
     'ai',
@@ -56,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_browser_reload.middleware.BrowserReloadMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'diseasediagnosis.urls'
@@ -141,5 +145,5 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-LOGIN_REDIRECT_URL = 'admin/home'
+LOGIN_REDIRECT_URL = 'admin'
 LOGIN_URL = 'login'
