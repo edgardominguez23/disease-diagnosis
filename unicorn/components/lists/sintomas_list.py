@@ -1,4 +1,5 @@
 from django_unicorn.components import UnicornView
+from django.core.exceptions import ValidationError
 from main.models import Sintoma
 from main.forms import SintomaForm
 
@@ -31,7 +32,7 @@ class SintomasListView(UnicornView):
         self.restablecer_valores()
 
     def save_sintoma(self):
-        if self.is_valid():
+        if self.is_valid() and self.validar_nombre_unico():
             if self.sintoma:
                 self.sintoma.nombre = self.nombre
                 self.sintoma.save()
@@ -52,3 +53,16 @@ class SintomasListView(UnicornView):
         self.nombre = ""
         self.sintoma = None
         self.isOpenModal = "hidden"
+
+    def validar_nombre_unico(self):
+        if self.sintoma:
+            if not self.sintoma.nombre == self.nombre:
+                if Sintoma.objects.filter(nombre=self.nombre).exists():
+                    self.call("alerta_nombre_existente")
+                    return False
+        else:
+            if Sintoma.objects.filter(nombre=self.nombre).exists():
+                    self.call("alerta_nombre_existente")
+                    return False
+        
+        return True
