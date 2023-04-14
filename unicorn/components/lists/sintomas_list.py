@@ -1,5 +1,4 @@
 from django_unicorn.components import UnicornView
-from django.core.exceptions import ValidationError
 from main.models import Sintoma
 from main.forms import SintomaForm
 
