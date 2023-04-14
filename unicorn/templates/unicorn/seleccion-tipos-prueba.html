@@ -1,0 +1,33 @@
+{% load unicorn %}
+<div>
+    <style>
+        #btn-crear {
+            background-color: #1e40af;
+        }
+        #btn-crear:hover {
+            background-color: #1e3a8a;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <!-- put component code here -->
+    <div class="flex">
+        <div class="flex-initial w-52 flex items-center">
+            <h2 class="text-2xl font-bold text-white">Lista de pruebas: </h2>
+        </div>
+        <div class="flex-initial w-64">
+            <select class="font-bold border border-black rounded-md bg-[#525276] text-white" name="tipo" id="tipo" unicorn:model="tipo">
+                <option value='0'>Laboratorio</option>
+                <option value='1'>Post mortem</option>
+            </select>
+        </div>
+    </div>
+    <div class="{{ estaSeleccionadoLaboratorio }}">
+        {% unicorn 'lists.pruebas-laboratorio-list' parent=view %}
+    </div>
+    <div class="{{ estaSeleccionadoPostmortem }}">
+        {% unicorn 'lists.pruebas-postmorten-list' parent=view %}
+    </div>
+</div>
