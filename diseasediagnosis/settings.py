@@ -145,5 +145,7 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
+SESSION_COOKIE_AGE = 3600
+
 LOGIN_REDIRECT_URL = 'admin'
 LOGIN_URL = 'login'
