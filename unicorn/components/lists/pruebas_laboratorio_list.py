@@ -20,7 +20,6 @@ class PruebasLaboratorioListView(UnicornView):
         self.pruebas = PruebaLaboratorio.objects.all()
 
     def open_modal(self, id=None):
-        print("Abierto")
         self.form_class = PruebaLaboratorioForm
         self.isOpenModal = ""
 
