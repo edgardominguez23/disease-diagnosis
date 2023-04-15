@@ -1,84 +1,91 @@
-{% extends "index.html" %}
+{% extends "auth/base.html" %}
 
 {% block content %}      
 
 <!--Login--> 
-<div class="grid grid-flow-col justify-stretch mt-20">
-    <div class="mx-20">    
-        <h1 class="text-center text-white font-bold text-2xl">Registrar</h1>
-        <form method="POST">
-            {% csrf_token %}
-            <div class="mb-4 flex flex-col items-start">
-                <label class="text-white text-sm font-bold mb-2" for="username">
-                    Nombre de usuario
-                </label>
-                <input
-                    class="border border-gray-600 rounded-md py-2 px-3 bg-[#1C1C39] text-white w-full pl-3"
-                    type="text"
-                    id="username"
-                    name="username"
-                    placeholder=""/>
-            </div>
-            <div class="mb-4 flex flex-col items-start">
-                <label class="text-white text-sm font-bold mb-2" for="first_name">
-                    Nombre
-                </label>
-                <input
-                    class="border border-gray-600 rounded-md py-2 px-3 bg-[#1C1C39] text-white w-full pl-3"
-                    type="text"
-                    id="first_name"
-                    name="first_name"
-                    placeholder=""/>
-            </div>
-            <div class="mb-4 flex flex-col items-start">
-                <label class="text-white text-sm font-bold mb-2" for="last_name">
-                    Apellidos
-                </label>
-                <input
-                    class="border border-gray-600 rounded-md py-2 px-3 bg-[#1C1C39] text-white w-full pl-3"
-                    type="text"
-                    id="last_name"
-                    name="last_name"
-                    placeholder=""/>
-            </div>
-            <div class="mb-4 flex flex-col items-start">
-                <label class="text-white text-sm font-bold mb-2" for="email">
-                    Correo electronico
-                </label>
-                <input
-                    class="border border-gray-600 rounded-md py-2 px-3 bg-[#1C1C39] text-white w-full pl-3"
-                    type="text"
-                    id="email"
-                    name="email"
-                    placeholder=""/>
-            </div>
-            <div class="mb-4 flex flex-col items-start">
-                <label class="text-white text-sm font-bold mb-2" for="password1">
-                    Contraseña
-                </label>
-                <input
-                    class="border border-gray-600 rounded-md py-2 px-3 bg-[#1C1C39] text-white w-full pl-3"
-                    type="password"
-                    id="password1"
-                    name="password1"
-                    placeholder=""/>
-            </div>
-            <div class="mb-4 flex flex-col items-start">
-                <label class="text-white text-sm font-bold mb-2" for="password2">
-                    Confirmar contraseña
-                </label>
-                <input
-                    class="border border-gray-600 rounded-md py-2 px-3 bg-[#1C1C39] text-white w-full pl-3"
-                    type="password"
-                    id="password2"
-                    name="password2"
-                    placeholder=""/>
-            </div>
-            <button class="rounded-full bg-[#4E4FEB] w-full text-white py-2" type="submit">Crear</button>
-        </form>
-        <p class="text-center text-white mt-5">¿Ya tienes una cuenta? <a class="font-bold" href="/login">Acceder</a>.</p>
+<div class="grid grid-rows-1 grid-flow-col h-screen">
+    <div class="bg-[#171731] grid justify-items-center content-center px-8" id="box-one">    
+        <div class="rounded bg-[#1C1C39] px-8 py-14 shadow-2xl w-full">
+            <h1 class="text-center text-white font-bold text-2xl">Registrar</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-4 flex flex-col items-start">
+                    <label class="text-white text-sm font-bold mb-2" for="username">
+                        Nombre de usuario
+                    </label>
+                    <input
+                        class="border border-gray-600 rounded-md py-2 px-3 bg-[#1C1C39] text-white w-full pl-3"
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder=""/>
+                </div>
+                <div class="mb-4 flex flex-col items-start">
+                    <label class="text-white text-sm font-bold mb-2" for="first_name">
+                        Nombre
+                    </label>
+                    <input
+                        class="border border-gray-600 rounded-md py-2 px-3 bg-[#1C1C39] text-white w-full pl-3"
+                        type="text"
+                        id="first_name"
+                        name="first_name"
+                        placeholder=""/>
+                </div>
+                <div class="mb-4 flex flex-col items-start">
+                    <label class="text-white text-sm font-bold mb-2" for="last_name">
+                        Apellidos
+                    </label>
+                    <input
+                        class="border border-gray-600 rounded-md py-2 px-3 bg-[#1C1C39] text-white w-full pl-3"
+                        type="text"
+                        id="last_name"
+                        name="last_name"
+                        placeholder=""/>
+                </div>
+                <div class="mb-4 flex flex-col items-start">
+                    <label class="text-white text-sm font-bold mb-2" for="email">
+                        Correo electronico
+                    </label>
+                    <input
+                        class="border border-gray-600 rounded-md py-2 px-3 bg-[#1C1C39] text-white w-full pl-3"
+                        type="text"
+                        id="email"
+                        name="email"
+                        placeholder=""/>
+                </div>
+                <div class="mb-4 flex flex-col items-start">
+                    <label class="text-white text-sm font-bold mb-2" for="password1">
+                        Contraseña
+                    </label>
+                    <input
+                        class="border border-gray-600 rounded-md py-2 px-3 bg-[#1C1C39] text-white w-full pl-3"
+                        type="password"
+                        id="password1"
+                        name="password1"
+                        placeholder=""/>
+                </div>
+                <div class="mb-4 flex flex-col items-start">
+                    <label class="text-white text-sm font-bold mb-2" for="password2">
+                        Confirmar contraseña
+                    </label>
+                    <input
+                        class="border border-gray-600 rounded-md py-2 px-3 bg-[#1C1C39] text-white w-full pl-3"
+                        type="password"
+                        id="password2"
+                        name="password2"
+                        placeholder=""/>
+                </div>
+                <button class="rounded-full bg-[#4E4FEB] w-full text-white py-2" type="submit">Crear</button>
+            </form>
+            <p class="text-center text-white mt-5">¿Ya tienes una cuenta? <a class="font-bold" href="/login">Acceder</a>.</p>
+        </div>
     </div>
-    <div class="mx-20">02</div>
+    <div class="bg-[#040404] grid justify-items-center content-center" id="box-two">
+        {% load static %}
+        <div>
+            <img class="rounded-full" src="{% static 'artificial-intelligence.jpg' %}" alt="My image" width="500" height="600">
+        </div>
+    </div>
 </div>
 
 {% endblock %}

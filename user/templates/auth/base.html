@@ -1,0 +1,24 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Diagnosis</title>
+
+    <!-- One file includes all the Font Awesome Free icons and utilities -->
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    {% tailwind_css %}
+  </head>
+  <body>
+    <style>
+      #box-one {
+        box-shadow: 14px 14px 20px 0 rgba(20, 20, 20, 0.3);
+      }
+    </style>
+
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>
