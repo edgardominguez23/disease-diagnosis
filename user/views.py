@@ -21,6 +21,10 @@ def register_request(request):
 	context = {'form': form}
 	return render(request, 'auth/register.html', context)
 
+def main_request(request):
+	if request.method == 'GET':
+		return render(request, 'main.html')
+
 """def login_request(request):
 	print(request)
 	if request.method == "POST":
