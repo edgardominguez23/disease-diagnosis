@@ -22,6 +22,10 @@ def index_consultorio(request):
 	if request.method == 'GET':
 		return render(request, 'lists/list-consultorios.html')
 	
+def create_consultorio(request):
+	if request.method == 'GET':
+		return render(request, 'forms/form-consultorio.html')
+	
 def index_paciente(request):
 	if request.method == 'GET':
 		return render(request, 'lists/list-pacientes.html')

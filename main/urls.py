@@ -10,5 +10,6 @@ urlpatterns = [
     path("signos", login_required(views.index_signo), name="signos-list"),
     path("pruebas", login_required(views.index_pruebas), name="pruebas-list"),
     path("consultorios", login_required(views.index_consultorio), name="consultorios-list"),
+    path("consultorios/create", login_required(views.create_consultorio), name="consultorios-create"),
     path("pacientes", login_required(views.index_paciente), name="pacientes-list"),
 ]
