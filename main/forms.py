@@ -67,8 +67,8 @@ class PacienteForm(forms.Form):
                 'required': _('Este campo apellidos es requerido.'),
                 'max_length': _('El campo nombre debe tener como máximo 50 caracteres.'),
             })
-    telefono = forms.IntegerField(max_value=1000000000, min_value=10000000, required=True, error_messages={
-                'required': _('Este campo hora final es requerido.'),
+    telefono = forms.IntegerField(max_value=9999999999, min_value=10000000, required=True, error_messages={
+                'required': _('Este campo telefono es requerido.'),
             })
     municipio = forms.CharField(max_length=50, required=True, error_messages={
                 'required': _('Este campo municipio es requerido.'),
