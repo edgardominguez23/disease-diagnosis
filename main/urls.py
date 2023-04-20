@@ -16,4 +16,8 @@ urlpatterns = [
     path("consultorios/edit/<int:id>/", login_required(views.edit_consultorio), name="consultorios-edit"),
 
     path("pacientes", login_required(views.index_paciente), name="pacientes-list"),
+    path("pacientes/create", login_required(views.create_paciente), name="pacientes-create"),
+    path("pacientes/edit/<int:id>/", login_required(views.edit_paciente), name="pacientes-edit"),
+
+    path("pacientes", login_required(views.index_paciente), name="pacientes-list"),
 ]

@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-    {% unicorn 'lists.pacientes-list' %}
+    {% unicorn 'forms.paciente-form' paciente=paciente %}
 {% endblock %}
 
 {% block scripts %}
@@ -25,10 +25,24 @@
         }
     })
 
-    function alerta_eliminacion_satisfactoria() {
+    function alerta_creacion_satisfactoria() {
         Toast.fire({
             icon: 'success',
-            title: 'Eliminación exitosa de un paciente',
+            title: 'Creación exitosa de un paciente',
+        })
+    }
+
+    function alerta_actualizacion_satisfactoria() {
+        Toast.fire({
+            icon: 'success',
+            title: 'Actualización exitosa de un paciente',
+        })
+    }
+
+    function alerta_nombre_existente() {
+        Toast.fire({
+            icon: 'error',
+            title: 'El nombre ya esta en uso',
         })
     }
 </script>
