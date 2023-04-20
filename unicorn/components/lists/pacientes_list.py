@@ -13,7 +13,7 @@ class PacientesListView(UnicornView):
     def load_table(self):
         self.pacientes = Paciente.objects.all()
 
-    def delete_consultorio(self, id):
+    def delete_paciente(self, id):
         paciente = Paciente.objects.get(id=id)
         paciente.delete()
         self.call("alerta_eliminacion_satisfactoria")
