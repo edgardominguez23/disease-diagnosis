@@ -2,7 +2,9 @@
 <div>
     <!-- put component code here -->
     <div class="rounded bg-[#5A5A94] px-8 shadow-2xl w-full py-10">
-        <h1 class="text-white font-bold text-2xl mb-4">Crear consultorio</h1>
+        <h1 class="text-white font-bold text-2xl mb-4">
+            {% if consultorio %} Editar {% else %} Crear {% endif %} consultorio
+        </h1>
         
         <form>
             {% csrf_token %}
@@ -124,7 +126,7 @@
         </form>
         <div class="flex flex-row-reverse ...">
             <div>
-                <button class="rounded bg-[#166534] hover:bg-[#14532d] w-full text-white px-8 py-2" unicorn:click="save_consultorio">Crear</button>
+                <button class="rounded bg-[#166534] hover:bg-[#14532d] w-full text-white px-8 py-2" unicorn:click="save_consultorio">Guardar</button>
             </div>
         </div>
     </div>

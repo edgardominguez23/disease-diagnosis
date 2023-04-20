@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-    {% unicorn 'forms.consultorio-form' %}
+    {% unicorn 'forms.consultorio-form' consultorio=consultorio %}
 {% endblock %}
 
 {% block scripts %}
@@ -28,14 +28,14 @@
     function alerta_creacion_satisfactoria() {
         Toast.fire({
             icon: 'success',
-            title: 'Creación exitosa de un signo',
+            title: 'Creación exitosa de un consultorio',
         })
     }
 
     function alerta_actualizacion_satisfactoria() {
         Toast.fire({
             icon: 'success',
-            title: 'Actualización exitosa de un signo',
+            title: 'Actualización exitosa de un consultorio',
         })
     }
 
