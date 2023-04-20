@@ -37,8 +37,10 @@
                 <tbody>
                     {% for c in consultorios %}
                     <tr>
-                        <td class="border border-slate-700 py-4 px-4">{{s.id}}</td>
-                        <td class="border border-slate-700 py-4 px-4">{{s.nombre}}</td>
+                        <td class="border border-slate-700 py-4 px-4">{{c.id}}</td>
+                        <td class="border border-slate-700 py-4 px-4">{{c.nombre}}</td>
+                        <td class="border border-slate-700 py-4 px-4">{{c.hora_abierto}} - {{ c.hora_cerrado }}</td>
+                        <td class="border border-slate-700 py-4 px-4"></td>
                         <td class="border border-slate-700">
                             <button class="bg-amber-500 px-4 py-2 rounded hover:bg-amber-600" unicorn:click="open_modal({{s.id}})">
                                 <i class="fa-solid fa-pen"></i> Editar
