@@ -1,0 +1,133 @@
+{% load unicorn %}
+<div>
+    <!-- put component code here -->
+    <div class="rounded bg-[#5A5A94] px-8 shadow-2xl w-full py-10">
+        <h1 class="text-white font-bold text-2xl mb-4">
+            {% if consultorio %} Editar {% else %} Crear {% endif %} consultorio
+        </h1>
+        
+        <form>
+            {% csrf_token %}
+            <div class="mb-4 flex flex-col items-start">
+                <label class="text-white text-sm font-bold mb-2" for="nombre">
+                    Nombre
+                </label>
+                <input
+                    class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    unicorn:model="nombre"
+                    placeholder=""/>
+                <span class="error">{{ unicorn.errors.nombre.0.message }}</span>
+            </div>
+            <div class="flex gap-4">
+                <div class="mb-4 flex flex-col w-1/2">
+                    <label class="text-white text-sm font-bold mb-2" for="hora_abierto">
+                        Hora inicial
+                    </label>
+                    <input
+                        class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                        type="text"
+                        id="hora_abierto"
+                        name="hora_abierto"
+                        unicorn:model="hora_abierto"
+                        placeholder="00:00"/>
+                    <span class="error">{{ unicorn.errors.hora_abierto.0.message }}</span>
+                </div>
+                <div class="mb-4 flex flex-col w-1/2">
+                    <label class="text-white text-sm font-bold mb-2" for="hora_cerrado">
+                        Hora final
+                    </label>
+                    <input
+                        class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                        type="text"
+                        id="hora_cerrado"
+                        name="hora_cerrado"
+                        unicorn:model="hora_cerrado"
+                        placeholder="00:00"/>
+                    <span class="error">{{ unicorn.errors.hora_cerrado.0.message }}</span>
+                </div>
+            </div>
+            <label class="text-white text-sm font-bold mb-2">
+                Dirección
+            </label>
+            <div class="border-2 border-dashed border-white p-4 my-5 rounded">
+                <div class="mb-4 flex flex-col items-start">
+                    <label class="text-white text-sm font-bold mb-2" for="municipio">
+                        Municipio
+                    </label>
+                    <input
+                        class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                        type="text"
+                        id="municipio"
+                        name="municipio"
+                        unicorn:model="municipio"
+                        placeholder="Ejem. Guadalajara"/>
+                    <span class="error">{{ unicorn.errors.municipio.0.message }}</span>
+                </div>
+                <div class="flex gap-4">
+                    <div class="mb-4 flex flex-col w-3/4">
+                        <label class="text-white text-sm font-bold mb-2" for="colonia">
+                            Colonia
+                        </label>
+                        <input
+                            class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                            type="text"
+                            id="colonia"
+                            name="colonia"
+                            unicorn:model="colonia"
+                            placeholder=""/>
+                        <span class="error">{{ unicorn.errors.colonia.0.message }}</span>
+                    </div>
+                    <div class="mb-4 flex flex-col w-1/4">
+                        <label class="text-white text-sm font-bold mb-2" for="codigoPostal">
+                            Código postal
+                        </label>
+                        <input
+                            class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                            type="text"
+                            id="codigoPostal"
+                            name="codigoPostal"
+                            unicorn:model="codigoPostal"
+                            placeholder=""/>
+                        <span class="error">{{ unicorn.errors.codigoPostal.0.message }}</span>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="mb-4 flex flex-col w-3/4">
+                        <label class="text-white text-sm font-bold mb-2" for="calle">
+                            Calle
+                        </label>
+                        <input
+                            class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                            type="text"
+                            id="calle"
+                            name="calle"
+                            unicorn:model="calle"
+                            placeholder=""/>
+                        <span class="error">{{ unicorn.errors.calle.0.message }}</span>
+                    </div>
+                    <div class="mb-4 flex flex-col w-1/4">
+                        <label class="text-white text-sm font-bold mb-2" for="numero">
+                            Número
+                        </label>
+                        <input
+                            class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                            type="text"
+                            id="numero"
+                            name="numero"
+                            unicorn:model="numero"
+                            placeholder="Ejem. 99"/>
+                        <span class="error">{{ unicorn.errors.numero.0.message }}</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="flex flex-row-reverse ...">
+            <div>
+                <button class="rounded bg-[#166534] hover:bg-[#14532d] w-full text-white px-8 py-2" unicorn:click="save_consultorio">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
