@@ -57,3 +57,34 @@ class ConsultorioForm(forms.Form):
     numero = forms.IntegerField(max_value=50000, min_value=1, required=True, error_messages={
                 'required': _('Este campo numero es requerido.'),
             })
+    
+class PacienteForm(forms.Form):
+    nombre = forms.CharField(max_length=50, required=True, error_messages={
+                'required': _('Este campo nombre es requerido.'),
+                'max_length': _('El campo nombre debe tener como máximo 50 caracteres.'),
+            })
+    apellidos = forms.CharField(max_length=50, required=True, error_messages={
+                'required': _('Este campo apellidos es requerido.'),
+                'max_length': _('El campo nombre debe tener como máximo 50 caracteres.'),
+            })
+    telefono = forms.IntegerField(max_value=1000000000, min_value=10000000, required=True, error_messages={
+                'required': _('Este campo hora final es requerido.'),
+            })
+    municipio = forms.CharField(max_length=50, required=True, error_messages={
+                'required': _('Este campo municipio es requerido.'),
+                'max_length': _('El campo municipio debe tener como máximo 50 caracteres.'),
+            })
+    colonia = forms.CharField(max_length=30, required=True, error_messages={
+                'required': _('Este campo colonia es requerido.'),
+                'max_length': _('El campo colonia debe tener como máximo 50 caracteres.'),
+            })
+    codigoPostal = forms.IntegerField(max_value=50000, min_value=40000, required=True, error_messages={
+                'required': _('Este campo codigo postal es requerido.'),
+            })
+    calle = forms.CharField(max_length=50, required=True, error_messages={
+                'required': _('Este campo calle es requerido.'),
+                'max_length': _('El campo calle debe tener como máximo 50 caracteres.'),
+            })
+    numero = forms.IntegerField(max_value=50000, min_value=1, required=True, error_messages={
+                'required': _('Este campo numero es requerido.'),
+            })
