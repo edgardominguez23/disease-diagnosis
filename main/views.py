@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from user.models import Consultorio
 
 # Create your views here.
 
@@ -25,6 +26,11 @@ def index_consultorio(request):
 def create_consultorio(request):
 	if request.method == 'GET':
 		return render(request, 'forms/form-consultorio.html')
+	
+def edit_consultorio(request, id):
+	if request.method == 'GET':
+		objecto = get_object_or_404(Consultorio, id=id)
+		return render(request, 'forms/form-consultorio.html', {'consultorio': objecto})
 	
 def index_paciente(request):
 	if request.method == 'GET':
