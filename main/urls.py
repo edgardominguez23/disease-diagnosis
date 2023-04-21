@@ -19,5 +19,5 @@ urlpatterns = [
     path("pacientes/create", login_required(views.create_paciente), name="pacientes-create"),
     path("pacientes/edit/<int:id>/", login_required(views.edit_paciente), name="pacientes-edit"),
 
-    path("pacientes", login_required(views.index_paciente), name="pacientes-list"),
+    path("roles", login_required(views.index_roles), name="roles-list"),
 ]
