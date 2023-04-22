@@ -23,6 +23,10 @@ def index_roles(request):
 	if request.method == 'GET':
 		return render(request, 'lists/list-roles.html')
 	
+def index_permisos(request):
+	if request.method == 'GET':
+		return render(request, 'lists/list-permisos.html')
+	
 def index_consultorio(request):
 	if request.method == 'GET':
 		return render(request, 'lists/list-consultorios.html')
