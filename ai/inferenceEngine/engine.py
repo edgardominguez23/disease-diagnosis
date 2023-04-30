@@ -31,4 +31,3 @@ def diagnose(patient: str, symptoms: list = ["none"], tests: list = ["none"]):
     result = [disease]
     result.append(medicines)
     return result
-print(diagnose("juan", ["dolor_de_torax"], ["test_ELISA"]))
