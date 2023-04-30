@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from user.models import Consultorio, Paciente
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -26,7 +27,9 @@ def index_roles(request):
 def index_permisos(request):
 	if request.method == 'GET':
 		return render(request, 'lists/list-permisos.html')
-	
+
+# Vistas de consultorio
+
 def index_consultorio(request):
 	if request.method == 'GET':
 		return render(request, 'lists/list-consultorios.html')
@@ -39,7 +42,9 @@ def edit_consultorio(request, id):
 	if request.method == 'GET':
 		objecto = get_object_or_404(Consultorio, id=id)
 		return render(request, 'forms/form-consultorio.html', {'consultorio': objecto})
-	
+
+# Vistas de paciente
+
 def index_paciente(request):
 	if request.method == 'GET':
 		return render(request, 'lists/list-pacientes.html')
@@ -52,3 +57,18 @@ def edit_paciente(request, id):
 	if request.method == 'GET':
 		objecto = get_object_or_404(Paciente, id=id)
 		return render(request, 'forms/form-paciente.html', {'paciente': objecto})
+
+# Vistas de usuario
+
+def index_usuario(request):
+	if request.method == 'GET':
+		return render(request, 'lists/list-usuarios.html')
+	
+def create_usuario(request):
+	if request.method == 'GET':
+		return render(request, 'forms/form-usuario.html')
+	
+def edit_usuario(request, id):
+	if request.method == 'GET':
+		objecto = get_object_or_404(User, id=id)
+		return render(request, 'forms/form-usuario.html', {'usuario': objecto})
