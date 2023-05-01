@@ -2,6 +2,11 @@ from django import forms
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator, MaxValueValidator
 
+class EnfermedadForm(forms.Form):
+    nombre = forms.CharField(max_length=50, required=True, error_messages={
+                'required': _('Este campo nombre es requerido.'),
+                'max_length': _('El campo nombre debe tener como máximo 50 caracteres.'),
+            })
 class SintomaForm(forms.Form):
     nombre = forms.CharField(max_length=50, required=True, error_messages={
                 'required': _('Este campo nombre es requerido.'),
@@ -87,4 +92,28 @@ class PacienteForm(forms.Form):
             })
     numero = forms.IntegerField(max_value=50000, min_value=1, required=True, error_messages={
                 'required': _('Este campo numero es requerido.'),
+            })
+    
+class UsuarioForm(forms.Form):
+    username = forms.CharField(max_length=50, required=True, error_messages={
+                'required': _('Este campo nombre es requerido.'),
+                'max_length': _('El campo nombre debe tener como máximo 50 caracteres.'),
+            })
+    first_name = forms.CharField(max_length=50, required=True, error_messages={
+                'required': _('Este campo nombre es requerido.'),
+                'max_length': _('El campo nombre debe tener como máximo 50 caracteres.'),
+            })
+    last_name = forms.CharField(max_length=50, required=True, error_messages={
+                'required': _('Este campo apellidos es requerido.'),
+                'max_length': _('El campo apellidos debe tener como máximo 50 caracteres.'),
+            })
+    email = forms.CharField(max_length=50, required=True, error_messages={
+                'required': _('Este campo correo es requerido.'),
+                'max_length': _('El campo correo debe tener como máximo 50 caracteres.'),
+            })
+    password1 = forms.CharField(max_length=50, required=True, error_messages={
+                'required': _('Este campo contraseña es requerido.'),
+            })
+    password2 = forms.CharField(max_length=50, required=True, error_messages={
+                'required': _('Este campo contraseña es requerido.'),
             })
