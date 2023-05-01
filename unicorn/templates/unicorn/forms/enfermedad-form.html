@@ -1,3 +1,32 @@
+{% load unicorn %}
 <div>
     <!-- put component code here -->
+    <div class="rounded bg-[#5A5A94] px-8 shadow-2xl w-full py-10">
+        <h1 class="text-white font-bold text-2xl mb-4">
+            {% if paciente %} Editar {% else %} Crear {% endif %} Enfermedad
+        </h1>
+        
+        <form>
+            {% csrf_token %}
+            <div class="mb-4 flex flex-col w-full">
+                <label class="text-white text-sm font-bold mb-2" for="nombre">
+                    Nombre
+                </label>
+                <input
+                    class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    unicorn:model="nombre"
+                    placeholder=""/>
+                <span class="error">{{ unicorn.errors.nombre.0.message }}</span>
+            </div>
+        </form>
+        <div class="flex flex-row-reverse ...">
+            <div>
+                <button class="rounded bg-[#166534] hover:bg-[#14532d] w-full text-white px-8 py-2" unicorn:click="save_paciente">Guardar</button>
+            </div>
+        </div>
+    </div>
 </div>
+
