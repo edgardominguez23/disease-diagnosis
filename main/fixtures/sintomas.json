@@ -1,0 +1,317 @@
+[
+    {
+        "model": "main.Sintoma",
+        "pk": 1,
+        "fields": {
+            "nombre": "tos",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 2,
+        "fields": {
+            "nombre": "fatiga",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 3,
+        "fields": {
+            "nombre": "fiebre",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 4,
+        "fields": {
+            "nombre": "perdida_del_olfato",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 5,
+        "fields": {
+            "nombre": "perdida_del_gusto",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 6,
+        "fields": {
+            "nombre": "dolor_de_garganta",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 7,
+        "fields": {
+            "nombre": "dolor_de_cabeza",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 8,
+        "fields": {
+            "nombre": "disnea",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 9,
+        "fields": {
+            "nombre": "debilidad",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 10,
+        "fields": {
+            "nombre": "dolor_muscular",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 11,
+        "fields": {
+            "nombre": "vomito",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 12,
+        "fields": {
+            "nombre": "diarrea",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 13,
+        "fields": {
+            "nombre": "erupciones_cutaneas",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 14,
+        "fields": {
+            "nombre": "disfuncion_renal",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 15,
+        "fields": {
+            "nombre": "disfuncion_hepatica",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 16,
+        "fields": {
+            "nombre": "hemorragia_interna",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 17,
+        "fields": {
+            "nombre": "hemorragia_externa",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 18,
+        "fields": {
+            "nombre": "anorexia",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 19,
+        "fields": {
+            "nombre": "perdida_de_la_sensibilidad",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 20,
+        "fields": {
+            "nombre": "alteraciones_en_la_movilidad",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 21,
+        "fields": {
+            "nombre": "paralisis",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 22,
+        "fields": {
+            "nombre": "perdida_de_peso",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 23,
+        "fields": {
+            "nombre": "malestar_general",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 24,
+        "fields": {
+            "nombre": "sudoracion",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 25,
+        "fields": {
+            "nombre": "sangrado_nasal",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 26,
+        "fields": {
+            "nombre": "dificultad_para_respirar",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 27,
+        "fields": {
+            "nombre": "dolor_abdominal",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 28,
+        "fields": {
+            "nombre": "dolor_epigastrico",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 29,
+        "fields": {
+            "nombre": "cefalea",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 30,
+        "fields": {
+            "nombre": "mialgia",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 31,
+        "fields": {
+            "nombre": "artralgia",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 32,
+        "fields": {
+            "nombre": "dolor_de_torax",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 33,
+        "fields": {
+            "nombre": "entumecimiento",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 34,
+        "fields": {
+            "nombre": "demencia",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "main.Sintoma",
+        "pk": 35,
+        "fields": {
+            "nombre": "ceguera",
+            "created_at": "2023-05-01T00:00:00Z",
+            "updated_at": "2023-05-01T00:00:00Z"
+        }
+    }
+]
