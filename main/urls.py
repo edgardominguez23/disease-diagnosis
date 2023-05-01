@@ -23,6 +23,10 @@ urlpatterns = [
     path("usuarios/create", login_required(views.create_usuario), name="usuarios-create"),
     path("usuarios/edit/<int:id>/", login_required(views.edit_usuario), name="usuarios-edit"),
 
+    path("enfermedades", login_required(views.index_enfermedad), name="enfermedades-list"),
+    path("enfermedades/create", login_required(views.create_enfermedad), name="enfermedades-create"),
+    path("enfermedades/edit/<int:id>/", login_required(views.edit_enfermedad), name="enfermedades-edit"),
+
     path("roles", login_required(views.index_roles), name="roles-list"),
     path("permisos", login_required(views.index_permisos), name="permisos-list"),
 ]
