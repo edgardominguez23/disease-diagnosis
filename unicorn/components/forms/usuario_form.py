@@ -35,9 +35,9 @@ class UsuarioFormView(UnicornView):
 
                 self.call("alerta_actualizacion_satisfactoria")
             else:
-                usuario = User(
+                usuario = User.objects.create_user(
                                 username = self.username,
-                                first_name=self.first_name,
+                                first_name = self.first_name,
                                 last_name = self.last_name,
                                 email = self.email,
                                 password = self.password1,
