@@ -1,3 +1,98 @@
+{% load unicorn %}
 <div>
     <!-- put component code here -->
+    <div class="rounded bg-[#5A5A94] px-8 shadow-2xl w-full py-10">
+        <h1 class="text-white font-bold text-2xl mb-4">
+            {% if usuario %} Editar {% else %} Crear {% endif %} usuario
+        </h1>
+        
+        <form>
+            {% csrf_token %}
+            <div class="mb-4 flex flex-col items-start">
+                <label class="text-white text-sm font-bold mb-2" for="username">
+                    Username
+                </label>
+                <input
+                    class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                    type="text"
+                    id="username"
+                    name="username"
+                    unicorn:model="username"
+                    placeholder=""/>
+                <span class="error">{{ unicorn.errors.username.0.message }}</span>
+            </div>
+            <div class="flex gap-4">
+                <div class="mb-4 flex flex-col w-1/2">
+                    <label class="text-white text-sm font-bold mb-2" for="first_name">
+                        Nombre
+                    </label>
+                    <input
+                        class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                        type="text"
+                        id="first_name"
+                        name="first_name"
+                        unicorn:model="first_name"
+                        placeholder=""/>
+                    <span class="error">{{ unicorn.errors.first_name.0.message }}</span>
+                </div>
+                <div class="mb-4 flex flex-col w-1/2">
+                    <label class="text-white text-sm font-bold mb-2" for="last_name">
+                        Apellidos
+                    </label>
+                    <input
+                        class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                        type="text"
+                        id="last_name"
+                        name="last_name"
+                        unicorn:model="last_name"
+                        placeholder=""/>
+                    <span class="error">{{ unicorn.errors.last_name.0.message }}</span>
+                </div>
+            </div>
+            <div class="mb-4 flex flex-col items-start">
+                <label class="text-white text-sm font-bold mb-2" for="email">
+                    Correo electronico
+                </label>
+                <input
+                    class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                    type="text"
+                    id="email"
+                    name="email"
+                    unicorn:model="email"
+                    placeholder="Ejem. user@gmail.com"/>
+                <span class="error">{{ unicorn.errors.email.0.message }}</span>
+            </div>
+            <div class="mb-4 flex flex-col items-start">
+                <label class="text-white text-sm font-bold mb-2" for="password1">
+                    Contraseña
+                </label>
+                <input
+                    class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                    type="password"
+                    id="password1"
+                    name="password1"
+                    unicorn:model="password1"
+                    placeholder=""/>
+                <span class="error">{{ unicorn.errors.password1.0.message }}</span>
+            </div>
+            <div class="mb-4 flex flex-col items-start">
+                <label class="text-white text-sm font-bold mb-2" for="password2">
+                    Confirmar contraseña
+                </label>
+                <input
+                    class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                    type="password"
+                    id="password2"
+                    name="password2"
+                    unicorn:model="password2"
+                    placeholder=""/>
+                <span class="error">{{ unicorn.errors.password2.0.message }}</span>
+            </div>
+        </form>
+        <div class="flex flex-row-reverse ...">
+            <div>
+                <button class="rounded bg-[#166534] hover:bg-[#14532d] w-full text-white px-8 py-2" unicorn:click="save_usuario">Guardar</button>
+            </div>
+        </div>
+    </div>
 </div>
