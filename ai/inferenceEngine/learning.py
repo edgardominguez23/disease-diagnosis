@@ -11,6 +11,12 @@ def show_symptoms():
     return [*set(my_list)]
 
 
+def show_signs():
+    my_list = [my_dict["X"]
+               for my_dict in prolog.query("sign(X, _)")]
+    return [*set(my_list)]
+
+
 def show_tests():
     my_list = [my_dict["X"]
                for my_dict in prolog.query("test(X, _)")]
@@ -34,9 +40,10 @@ def show_diseases():
 def is_fact(fact: str):
     """
     Examples:\n
-    "symptom(dolor,cancer)"\n
-    "test(niveles_altos_de_leucositos,cancer)"\n
-    "treatment(anestesia,dolor)"
+    "symptom(debilidad,ebola)"\n
+    "sign(tos,coronavirus)."\n
+    "test(examen_de_sangre,sifilis)"\n
+    "treatment(lumefantrina,malaria)"
     """
 
     fact = fact.replace(" ", "")
@@ -53,9 +60,10 @@ def is_fact(fact: str):
 def add_fact(fact: str):
     """
     Examples:\n
-    "symptom(dolor,cancer)"\n
-    "test(niveles_altos_de_leucositos,cancer)"\n
-    "treatment(anestesia,dolor)"
+    "symptom(debilidad,ebola)"\n
+    "sign(tos,coronavirus)."\n
+    "test(examen_de_sangre,sifilis)"\n
+    "treatment(lumefantrina,malaria)"
     """
 
     fact = fact.replace(" ", "")
@@ -79,9 +87,10 @@ def add_fact(fact: str):
 def delete_fact(fact: str):
     """
     Examples:\n
-    "symptom(dolor,cancer)"\n
-    "test(niveles_altos_de_leucositos,cancer)"\n
-    "treatment(anestesia,dolor)"
+    "symptom(debilidad,ebola)"\n
+    "sign(tos,coronavirus)."\n
+    "test(examen_de_sangre,sifilis)"\n
+    "treatment(lumefantrina,malaria)"
     """
 
     fact = fact.replace(" ", "")
