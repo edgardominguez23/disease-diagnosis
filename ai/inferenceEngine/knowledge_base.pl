@@ -70,34 +70,35 @@ sign(lesiones_cutaneas,difteria).
 sign(sangrado_nasal,difteria).
 sign(tos,difteria).
 
-test(test_PCR,coronavirus).
-test(test_de_antigenos,coronavirus).
-test(tomografia_de_torax,coronavirus).
-test(test_ELISA,ebola).
-test(test_PCR,ebola).
-test(test_de_deteccion_de_anticuerpos,ebola).
-test(test_de_seroneutralizacion,ebola).
-test(cultivo_celular,ebola).
-test(biopsia_de_piel,lepra).
-test(lepromina_cutanea,lepra).
-test(examen_fisico,malaria).
-test(frotis_de_sangre,malaria).
-test(test_con_tiras_reactivas,peste).
-test(test_de_liquido_de_ulcera,sifilis).
-test(ecocardiografia,sifilis).
-test(angiografia_aortica,sifilis).
-test(cateterismo_cardiaco,sifilis).
-test(puncion_raquidea,sifilis).
-test(examen_de_sangre,sifilis).
-test(test_de_tuberculina,tuberculosis).
-test(test_de_la_tuberculina,tuberculosis).
-test(radiografia_de_torax,tuberculosis).
-test(analisis_de_sangre,tuberculosis).
-test(biopsia_de_higado,tuberculosis).
-test(biopsia_de_ganglio_linfatico,tuberculosis).
-test(tincion_de_Gram,difteria).
-test(analisis_de_toxinas,difteria).
-test(electrocardiograma,difteria).
+lab_test(test_PCR,coronavirus).
+lab_test(test_de_antigenos,coronavirus).
+lab_test(tomografia_de_torax,coronavirus).
+lab_test(test_ELISA,ebola).
+lab_test(test_PCR,ebola).
+lab_test(test_de_deteccion_de_anticuerpos,ebola).
+lab_test(test_de_seroneutralizacion,ebola).
+lab_test(cultivo_celular,ebola).
+lab_test(lepromina_cutanea,lepra).
+lab_test(examen_fisico,malaria).
+lab_test(frotis_de_sangre,malaria).
+lab_test(test_con_tiras_reactivas,peste).
+lab_test(test_de_liquido_de_ulcera,sifilis).
+lab_test(ecocardiografia,sifilis).
+lab_test(angiografia_aortica,sifilis).
+lab_test(cateterismo_cardiaco,sifilis).
+lab_test(puncion_raquidea,sifilis).
+lab_test(examen_de_sangre,sifilis).
+lab_test(test_de_tuberculina,tuberculosis).
+lab_test(test_de_la_tuberculina,tuberculosis).
+lab_test(radiografia_de_torax,tuberculosis).
+lab_test(analisis_de_sangre,tuberculosis).
+lab_test(tincion_de_Gram,difteria).
+lab_test(analisis_de_toxinas,difteria).
+lab_test(electrocardiograma,difteria).
+
+postmortem_test(biopsia_de_piel,lepra).
+postmortem_test(biopsia_de_higado,tuberculosis).
+postmortem_test(biopsia_de_ganglio_linfatico,tuberculosis).
 
 treatment(remdesivir,coronavirus).
 treatment(ritonavir,coronavirus).
@@ -146,9 +147,10 @@ treatment(antibiotico,infeccion_bacteriana).
 treatment(antivirales,inflamacion_pulmonar).
 
 %Rules
-sick(Patient, Disease) :- has(Patient, Symptom), symptom(Symptom, Disease).
-sick(Patient, Disease) :- has(Patient, Sign), sign(Sign, Disease).
-sick(Patient, Disease) :- has(Patient, Test), test(Test, Disease).
+sick(Disease) :- has(Symptom), symptom(Symptom, Disease).
+sick(Disease) :- has(Sign), sign(Sign, Disease).
+sick(Disease) :- has(Test), lab_test(Test, Disease).
+sick(Disease) :- has(Test), postmortem_test(Test, Disease).
 
-prescribe(Medicine, _, Disease) :- treatment(Medicine, Disease).
-prescribe(Medicine, Patient, _) :- treatment(Medicine, X), has(Patient, X).
+prescribe(Medicine, Disease) :- treatment(Medicine, Disease).
+prescribe(Medicine, _) :- treatment(Medicine, X), has(X).

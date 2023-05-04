@@ -17,9 +17,15 @@ def show_signs():
     return [*set(my_list)]
 
 
-def show_tests():
+def show_lab_tests():
     my_list = [my_dict["X"]
-               for my_dict in prolog.query("test(X, _)")]
+               for my_dict in prolog.query("lab_test(X, _)")]
+    return [*set(my_list)]
+
+
+def show_postmortem_tests():
+    my_list = [my_dict["X"]
+               for my_dict in prolog.query("postmortem_test(X, _)")]
     return [*set(my_list)]
 
 
@@ -31,9 +37,7 @@ def show_medicines():
 
 def show_diseases():
     my_list = [my_dict["X"]
-               for my_dict in prolog.query("symptom(_, X)")]
-    my_list += [my_dict["X"]
-               for my_dict in prolog.query("test(_, X)")]
+               for my_dict in prolog.query("treatment(_, X)")]
     return [*set(my_list)]
 
 
