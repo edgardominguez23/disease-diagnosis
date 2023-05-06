@@ -54,12 +54,10 @@
                         </label>
                         <input 
                             class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
-                            type="date" 
+                            type="text" 
                             id="fecha" 
                             name="fecha"
-                            value="2023-05-6"
-                            min="2023-01-01" 
-                            max="2050-12-31"
+                            placeholder="DD/MM/YYYY"
                             unicorn:model="fecha">
                         <span class="error">{{ unicorn.errors.fecha.0.message }}</span>
                     </div>
