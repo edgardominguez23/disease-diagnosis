@@ -117,3 +117,11 @@ class UsuarioForm(forms.Form):
     password2 = forms.CharField(max_length=50, required=True, error_messages={
                 'required': _('Este campo contraseña es requerido.'),
             })
+    
+class CitaForm(forms.Form):
+    fecha = forms.DateField(required=True, error_messages={ 'required': _('La fecha es requerida.') })
+    hora = forms.TimeField(required=True, error_messages={ 'required': _('La hora es requerida.') })
+    estado = forms.CharField(required=True, error_messages={ 'required': _('El estado es requerido.') })
+    paciente = forms.CharField(required=True, error_messages={ 'required': _('El paciente es requerido.') })
+    consultorio = forms.CharField(required=True, error_messages={ 'required': _('El consultorio es requerido.') })
+    medico = forms.CharField(required=True, error_messages={ 'required': _('El medico es requerido.') })

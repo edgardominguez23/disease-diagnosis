@@ -1,0 +1,99 @@
+{% load unicorn %}
+<div>
+    <!-- put component code here -->
+    <div class="rounded bg-[#5A5A94] px-8 shadow-2xl w-full py-10">
+        <h1 class="text-white font-bold text-2xl mb-4">
+            {% if cita %} Editar {% else %} Crear {% endif %} cita
+        </h1>
+        
+        <form>
+            {% csrf_token %}
+            <div class="mb-4 flex flex-col items-start">
+                <label class="text-white text-sm font-bold mb-2" for="consultorio">
+                    Consultorio
+                </label>
+                <select name="estado" class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" unicorn:model="consultorio">
+                    {% for c in consultorios %}
+                        <option value="{{ c.id }}">{{ c.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <span class="error">{{ unicorn.errors.consultorio.0.message }}</span>
+            </div>
+            <div class="flex gap-4">
+                <div class="mb-4 flex flex-col w-1/2">
+                    <label class="text-white text-sm font-bold mb-2" for="paciente">
+                        Paciente
+                    </label>
+                    <select name="paciente" class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" unicorn:model="paciente">
+                        {% for p in pacientes %}
+                            <option value="{{ p.id }}">{{ p.apellidos }} {{ p.nombre }}</option>
+                        {% endfor %}
+                    </select>
+                    <span class="error">{{ unicorn.errors.paciente.0.message }}</span>
+                </div>
+                <div class="mb-4 flex flex-col w-1/2">
+                    <label class="text-white text-sm font-bold mb-2" for="medico">
+                        Medico
+                    </label>
+                    <select name="medico" class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" unicorn:model="medico">
+                        {% for m in medicos %}
+                            <option value="{{ m.id }}">{{ m.last_name }} {{ m.first_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <span class="error">{{ unicorn.errors.medico.0.message }}</span>
+                </div>
+            </div>
+            <label class="text-white text-sm font-bold mb-2">
+                Informacion general
+            </label>
+            <div class="border-2 border-dashed border-white p-4 my-5 rounded">
+                <div class="flex gap-4">
+                    <div class="mb-4 flex flex-col w-1/2">
+                        <label class="text-white text-sm font-bold mb-2" for="fecha">
+                            Fecha
+                        </label>
+                        <input 
+                            class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                            type="text" 
+                            id="fecha" 
+                            name="fecha"
+                            placeholder="DD/MM/YYYY"
+                            unicorn:model="fecha">
+                        <span class="error">{{ unicorn.errors.fecha.0.message }}</span>
+                    </div>
+                    <div class="mb-4 flex flex-col w-1/2">
+                        <label class="text-white text-sm font-bold mb-2" for="hora">
+                            Hora
+                        </label>
+                        <input 
+                            class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
+                            type="time" 
+                            id="hora" 
+                            name="hora"
+                            min="08:00" 
+                            max="20:00"
+                            unicorn:model="hora">
+                        <span class="error">{{ unicorn.errors.hora.0.message }}</span>
+                    </div>
+                </div>
+                <div class="mb-4 flex flex-col items-start">
+                    <label class="text-white text-sm font-bold mb-2" for="estado">
+                        Estado
+                    </label>
+                    <select name="estado" class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" unicorn:model="estado">
+                    {% for e in estados %}
+                        <option value="{{ e }}">{{ e }}</option>
+                    {% endfor %}
+                    </select>
+                    <span class="error">{{ unicorn.errors.estado.0.message }}</span>
+                </div>
+            </div>
+        </form>
+        <div class="flex flex-row-reverse">
+            <div>
+                <button class="rounded bg-[#166534] hover:bg-[#14532d] w-full text-white px-8 py-2" unicorn:click="save_cita">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

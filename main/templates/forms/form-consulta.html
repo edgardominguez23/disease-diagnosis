@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+{% load unicorn %}
+
+{% block head %}
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    {% unicorn_scripts %}
+{% endblock %}
+
+{% block content %}
+    {% unicorn 'forms.consulta-form' consulta=consulta %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+    function alerta_creacion_satisfactoria() {
+        Toast.fire({
+            icon: 'success',
+            title: 'Creación exitosa de una consulta',
+        })
+    }
+
+    function alerta_actualizacion_satisfactoria() {
+        Toast.fire({
+            icon: 'success',
+            title: 'Actualización exitosa de una consulta',
+        })
+    }
+
+    function alerta_nombre_existente() {
+        Toast.fire({
+            icon: 'error',
+            title: 'El nombre ya esta en uso',
+        })
+    }
+</script>
+{% endblock %}
