@@ -42,7 +42,7 @@
                         <td class="border border-slate-700 py-4 px-4">{{c.fecha}}</td>
                         <td class="border border-slate-700 py-4 px-4">{{c.hora}}</td>
                         <td class="border border-slate-700 py-4 px-4">{{c.estado}}</td>
-                        <td class="border border-slate-700 py-4 px-4">{{c.paciente}}</td>
+                        <td class="border border-slate-700 py-4 px-4">{{c.paciente.apellidos}} {{c.paciente.nombre}}</td>
                         <td class="border border-slate-700">
                             <a href="{% url 'citas-edit' id=c.id %}">
                                 <button class="bg-amber-500 px-4 py-2 rounded hover:bg-amber-600">
