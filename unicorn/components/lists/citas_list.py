@@ -13,7 +13,7 @@ class CitasListView(UnicornView):
     def load_table(self):
         self.citas = Cita.objects.all()
 
-    def delete_paciente(self, id):
+    def delete_cita(self, id):
         cita = Cita.objects.get(id=id)
         cita.delete()
         self.call("alerta_eliminacion_satisfactoria")
