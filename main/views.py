@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from user.models import Consultorio, Paciente, Enfermedad
+from user.models import Consultorio, Paciente, Enfermedad, Cita, Consulta
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -87,3 +87,33 @@ def edit_enfermedad(request, id):
 	if request.method == 'GET':
 		objecto = get_object_or_404(Enfermedad, id=id)
 		return render(request, 'forms/form-enfermedad.html', {'enfermedad': objecto})
+	
+# Vistas de cita
+
+def index_cita(request):
+	if request.method == 'GET':
+		return render(request, 'lists/list-citas.html')
+	
+def create_cita(request):
+	if request.method == 'GET':
+		return render(request, 'forms/form-cita.html')
+	
+def edit_cita(request, id):
+	if request.method == 'GET':
+		objecto = get_object_or_404(Cita, id=id)
+		return render(request, 'forms/form-cita.html', {'cita': objecto})
+	
+# Vistas de consulta
+
+def index_consulta(request):
+	if request.method == 'GET':
+		return render(request, 'lists/list-consultas.html')
+	
+def create_consulta(request):
+	if request.method == 'GET':
+		return render(request, 'forms/form-consulta.html')
+	
+def edit_consulta(request, id):
+	if request.method == 'GET':
+		objecto = get_object_or_404(Consulta, id=id)
+		return render(request, 'forms/form-consulta.html', {'consulta': objecto})
