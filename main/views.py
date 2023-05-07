@@ -57,6 +57,11 @@ def edit_paciente(request, id):
 	if request.method == 'GET':
 		objecto = get_object_or_404(Paciente, id=id)
 		return render(request, 'forms/form-paciente.html', {'paciente': objecto})
+	
+def ver_historial(request, id):
+	if request.method == 'GET':
+		objecto = get_object_or_404(Paciente, id=id)
+		return render(request, 'lists/list-historial.html', {'paciente': objecto})
 
 # Vistas de usuario
 

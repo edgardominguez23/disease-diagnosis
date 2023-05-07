@@ -1,5 +1,6 @@
 from django_unicorn.components import UnicornView
 from user.models import Paciente
+from django.shortcuts import redirect
 
 class PacientesListView(UnicornView):
     pacientes = Paciente.objects.none()
@@ -17,3 +18,6 @@ class PacientesListView(UnicornView):
         paciente = Paciente.objects.get(id=id)
         paciente.delete()
         self.call("alerta_eliminacion_satisfactoria")
+
+    def ver_historial(self, id):
+        return redirect(f"/admin/pacientes/{id}/historial")
