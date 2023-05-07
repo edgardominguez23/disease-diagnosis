@@ -1,7 +1,7 @@
 from pyswip import Prolog
 
 prolog = Prolog()
-prolog.consult("knowledge_base.pl")
+prolog.consult("ai/inferenceEngine/knowledge_base.pl")
 
 
 def most_frequent(my_list):

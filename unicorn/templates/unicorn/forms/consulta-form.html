@@ -1,3 +1,61 @@
+{% load unicorn %}
 <div>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 10px;
+            width: 100%;
+        }
+        .item {
+            padding: 20px;
+        }
+    </style>
+
     <!-- put component code here -->
+    <div class="rounded bg-[#5A5A94] px-8 shadow-2xl w-full py-10">
+        <h1 class="text-white font-bold text-2xl mb-4">
+            Consulta
+        </h1>
+        <div>
+            {% csrf_token %}
+            <div class="mb-4 flex flex-col items-start">
+                <label class="text-white text-sm font-bold mb-2" for="telefono">
+                    Sintomas
+                </label>
+                <select unicorn:model="sintomas" class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" multiple>
+                {% for symtom in symptoms %}
+                    <option value="{{ symtom }}">{{ symtom }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="mb-4 flex flex-col items-start">
+                <label class="text-white text-sm font-bold mb-2" for="telefono">
+                    Signos
+                </label>
+                <select unicorn:model="signos" class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" multiple>
+                    {% for sig in signs %}
+                        <option value="{{ sig }}">{{ sig }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <label class="text-white text-sm font-bold mb-2">
+                Pruebas
+            </label>
+            <div class="border-2 border-dashed border-white p-4 my-5 rounded">
+                
+                
+            </div>
+        </div>
+        <div class="flex flex-row-reverse ...">
+            <div>
+                <button class="rounded bg-[#166534] hover:bg-[#14532d] w-full text-white px-8 py-2" 
+                        unicorn:click="obtener_diagnostico"
+                >
+                    Obtener diagnostico
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
