@@ -58,9 +58,11 @@
                             <button class="bg-red-600 px-4 py-2 rounded hover:bg-red-700" onclick="alerta_confirmacion_elimacion('{{c.id}}')">
                                 <i class="fa-solid fa-trash-can"></i> Eliminar
                             </button>
-                            <button class="activate px-4 py-2 rounded">
-                                <i class="fa-solid fa-notes-medical"></i> Generar consulta
-                            </button>
+                            <a href="{% url 'consultas-create' %}">
+                                <button class="activate px-4 py-2 rounded">
+                                    <i class="fa-solid fa-notes-medical"></i> Generar consulta
+                                </button>
+                            </a>
                         </td>
                     </tr>
                     {% empty %}
