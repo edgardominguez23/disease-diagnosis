@@ -39,6 +39,7 @@ class Paciente(models.Model):
     apellidos = models.CharField(max_length=255, null=False)
     telefono = models.CharField(max_length=10, null=False)
     direccion = GenericRelation(Direccion)
+    estaVivo = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
