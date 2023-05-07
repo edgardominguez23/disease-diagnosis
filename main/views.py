@@ -109,6 +109,7 @@ def index_consulta(request):
 	if request.method == 'GET':
 		return render(request, 'lists/list-consultas.html')
 	
-def create_consulta(request):
+def create_consulta(request, id):
 	if request.method == 'GET':
-		return render(request, 'forms/form-consulta.html')
+		objecto = get_object_or_404(Cita, id=id)
+		return render(request, 'forms/form-consulta.html', {'cita': objecto})
