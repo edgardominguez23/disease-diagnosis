@@ -9,6 +9,12 @@
         .hidden {
             display: none;
         }
+        .activate {
+            background-color: #3b82f6;
+        }
+        .activate:hover {
+            background-color: #1a62d6;
+        }
     </style>
 
     <!-- put component code here -->
@@ -52,6 +58,11 @@
                             <button class="bg-red-600 px-4 py-2 rounded hover:bg-red-700" onclick="alerta_confirmacion_elimacion('{{c.id}}')">
                                 <i class="fa-solid fa-trash-can"></i> Eliminar
                             </button>
+                            {% if c.estado != "Completada" %}
+                            <button class="activate px-4 py-2 rounded" unicorn:click="generar_consulta({{ c.id }})">
+                                <i class="fa-solid fa-notes-medical"></i> Generar consulta
+                            </button>
+                            {% endif %}
                         </td>
                     </tr>
                     {% empty %}

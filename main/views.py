@@ -104,16 +104,8 @@ def edit_cita(request, id):
 		return render(request, 'forms/form-cita.html', {'cita': objecto})
 	
 # Vistas de consulta
-
-def index_consulta(request):
-	if request.method == 'GET':
-		return render(request, 'lists/list-consultas.html')
 	
-def create_consulta(request):
+def create_consulta(request, id):
 	if request.method == 'GET':
-		return render(request, 'forms/form-consulta.html')
-	
-def edit_consulta(request, id):
-	if request.method == 'GET':
-		objecto = get_object_or_404(Consulta, id=id)
-		return render(request, 'forms/form-consulta.html', {'consulta': objecto})
+		objecto = get_object_or_404(Cita, id=id)
+		return render(request, 'forms/form-consulta.html', {'cita': objecto})
