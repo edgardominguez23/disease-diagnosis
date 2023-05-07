@@ -4,6 +4,7 @@ from ai.inferenceEngine.engine import diagnose
 from multiprocessing import Process, Queue
 from queue import Empty
 from django.shortcuts import redirect
+from user.models import HistorialConsultas
 
 class ConsultaFormView(UnicornView):
     cita = None
@@ -49,5 +50,11 @@ class ConsultaFormView(UnicornView):
 
             self.cita.estado = "Completada"
             self.cita.save()
+
+            historial = HistorialConsultas(
+                paciente = consulta.paciente,
+                consulta = consulta
+            )
+            historial.save()
 
             return redirect(f"/admin/citas")
