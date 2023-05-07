@@ -7,7 +7,7 @@ prolog.consult("ai/inferenceEngine/knowledge_base.pl")
 def most_frequent(my_list):
         return max(set(my_list), key=my_list.count)
 
-def diagnose(conditions: list):
+def diagnose(conditions: list, queue):
     # Temporarily add patient's symptoms, signs and tests
     for condition in conditions:
         prolog.assertz(f"has({condition})")
@@ -26,4 +26,6 @@ def diagnose(conditions: list):
     # Return the desease and the medicines
     result = [disease]
     result.append(medicines)
-    return result
+
+    queue.put(result)
+    

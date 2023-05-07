@@ -21,20 +21,26 @@
         <div>
             {% csrf_token %}
             <div class="mb-4 flex flex-col items-start">
-                <label class="text-white text-sm font-bold mb-2" for="telefono">
+                <label class="text-white text-sm font-bold mb-2" for="sintomas">
                     Sintomas
                 </label>
-                <select unicorn:model="sintomas" class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" multiple>
+                <select
+                    class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" 
+                    id="sintomas"
+                    multiple>
                 {% for symtom in symptoms %}
                     <option value="{{ symtom }}">{{ symtom }}</option>
                 {% endfor %}
                 </select>
             </div>
             <div class="mb-4 flex flex-col items-start">
-                <label class="text-white text-sm font-bold mb-2" for="telefono">
+                <label class="text-white text-sm font-bold mb-2" for="signos">
                     Signos
                 </label>
-                <select unicorn:model="signos" class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" multiple>
+                <select
+                    class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" 
+                    id="signos"
+                    multiple>
                     {% for sig in signs %}
                         <option value="{{ sig }}">{{ sig }}</option>
                     {% endfor %}
@@ -44,18 +50,37 @@
                 Pruebas
             </label>
             <div class="border-2 border-dashed border-white p-4 my-5 rounded">
-                
-                
+                {{ test }}
             </div>
         </div>
         <div class="flex flex-row-reverse ...">
-            <div>
-                <button class="rounded bg-[#166534] hover:bg-[#14532d] w-full text-white px-8 py-2" 
-                        unicorn:click="obtener_diagnostico"
+                <button class="rounded bg-[#166534] hover:bg-[#14532d] text-white px-8 py-2" 
+                        onclick="obtner_diagnostico()"
                 >
                     Obtener diagnostico
                 </button>
-            </div>
+            <button class="rounded bg-[#166534] hover:bg-[#14532d] text-white px-8 py-2">
+                Guardar
+            </button>
         </div>
     </div>
 </div>
+
+<script>
+    function obtner_diagnostico() {
+        const selectSintomas = document.getElementById("sintomas");
+        const selectSignos = document.getElementById("signos");
+        
+        const selectedOptions = [...selectSintomas.selectedOptions, ...selectSignos.selectedOptions];
+
+        // Obtener los valores de las opciones seleccionadas
+        const selectedValues = Array.from(selectedOptions).map(option => option.value);
+
+        if(selectedValues.length > 0) {
+            const padecimientos = selectedValues.join(',')
+            console.log("Opciones seleccionadas:", padecimientos);
+            Unicorn.call('forms.consulta-form','get_consulta', padecimientos);
+        }
+        //console.log("Opciones seleccionadas:", selectedValues);
+    }
+</script>
