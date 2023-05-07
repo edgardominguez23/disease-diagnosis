@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% load unicorn %}
+
+{% block head %}
+    {% unicorn_scripts %}
+{% endblock %}
+
+{% block content %}
+    {% unicorn 'lists.historial-list' paciente=paciente %}
+{% endblock %}

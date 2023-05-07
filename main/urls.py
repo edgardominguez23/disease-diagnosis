@@ -18,6 +18,7 @@ urlpatterns = [
     path("pacientes", login_required(views.index_paciente), name="pacientes-list"),
     path("pacientes/create", login_required(views.create_paciente), name="pacientes-create"),
     path("pacientes/edit/<int:id>/", login_required(views.edit_paciente), name="pacientes-edit"),
+    path("pacientes/<int:id>/historial", login_required(views.ver_historial), name="pacientes-historial"),
 
     path("usuarios", login_required(views.index_usuario), name="usuarios-list"),
     path("usuarios/create", login_required(views.create_usuario), name="usuarios-create"),
