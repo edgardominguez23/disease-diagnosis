@@ -70,6 +70,12 @@
             <div class="border-2 border-dashed border-white p-4 my-5 rounded">
                 {{ diagnistico }}
             </div>
+            <label class="text-white text-sm font-bold mb-2">
+                Tratamiento
+            </label>
+            <div class="border-2 border-dashed border-white p-4 my-5 rounded">
+                {{ tratamiento }}
+            </div>
         </div>
         <div class="flex flex-row-reverse gap-4">
             <button class="rounded bg-[#166534] hover:bg-[#14532d] text-white px-8 py-2">
@@ -79,12 +85,9 @@
                 Ingresar pruebas
             </button>
             <button class="rounded diagnistico text-white px-8 py-2" 
-                    onclick="obtner_diagnostico()"
+                    onclick="obtener_diagnostico()"
             >
                 Obtener diagnostico
-            </button>
-            <button class="rounded tratamiento text-white px-8 py-2">
-                Obtener tratamiento
             </button>
         </div>
     </div>
@@ -96,7 +99,7 @@
         $('#signos').select2();
     });
 
-    function obtner_diagnostico() {
+    function obtener_diagnostico() {
         const selectSintomas = document.getElementById("sintomas");
         const selectSignos = document.getElementById("signos");
         

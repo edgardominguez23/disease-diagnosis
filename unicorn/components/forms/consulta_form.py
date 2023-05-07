@@ -5,13 +5,18 @@ from multiprocessing import Process, Queue
 from queue import Empty
 
 class ConsultaFormView(UnicornView):
+    cita = None
     symptoms = show_symptoms()
     signs = show_signs()
 
     diagnistico = ""
+    tratamiento = ""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(**kwargs)
+        self.cita = None if kwargs.get("cita") == 'cita' else kwargs.get("cita")
 
     def get_consulta(self, padecimientos):
-        #padecimientos = self.signos + self.sintomas
         queue = Queue()
         p = Process(target=diagnose, args=(padecimientos.split(","), queue))
         p.start()
@@ -20,7 +25,9 @@ class ConsultaFormView(UnicornView):
         p.join()
 
         try:
-            self.diagnistico = queue.get(timeout=10).title().replace("_", " ")
+            lista = queue.get(timeout=10)
+            self.diagnistico = lista[0]
+            self.tratamiento = ', '.join(lista[1])
             print(self.diagnistico)
         except Empty:
             self.diagnistico = "No se encontraron resultados en el tiempo especificado."
