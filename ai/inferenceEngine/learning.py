@@ -45,7 +45,6 @@ def is_fact(fact: str):
     """
     Examples:\n
     "symptom(debilidad,ebola)"\n
-    "sign(tos,coronavirus)."\n
     "test(examen_de_sangre,sifilis)"\n
     "treatment(lumefantrina,malaria)"
     """
@@ -65,7 +64,6 @@ def add_fact(fact: str):
     """
     Examples:\n
     "symptom(debilidad,ebola)"\n
-    "sign(tos,coronavirus)."\n
     "test(examen_de_sangre,sifilis)"\n
     "treatment(lumefantrina,malaria)"
     """
@@ -92,7 +90,6 @@ def delete_fact(fact: str):
     """
     Examples:\n
     "symptom(debilidad,ebola)"\n
-    "sign(tos,coronavirus)."\n
     "test(examen_de_sangre,sifilis)"\n
     "treatment(lumefantrina,malaria)"
     """
