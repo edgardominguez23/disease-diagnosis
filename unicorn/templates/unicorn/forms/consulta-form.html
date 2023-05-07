@@ -64,24 +64,64 @@
                     {% endfor %}
                 </select>
             </div>
+            <div class="mb-4 flex flex-col items-start" unicorn:ignore id="pruebasLab">
+                <label class="text-white text-sm font-bold mb-2" for="pruebas_lab">
+                    Pruebas de laboratorio
+                </label>
+                <select
+                    class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" 
+                    id="pruebas_lab"
+                    multiple>
+                    {% for lab in lab_tests %}
+                        <option value="{{ lab }}">{{ lab }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-4 flex flex-col items-start" unicorn:ignore id="pruebasPost">
+                <label class="text-white text-sm font-bold mb-2" for="pruebas_post">
+                    Pruebas post-mortem
+                </label>
+                <select
+                    class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" 
+                    id="pruebas_post"
+                    multiple>
+                    {% for post in postmortem_tests %}
+                        <option value="{{ post }}">{{ post }}</option>
+                    {% endfor %}
+                </select>
+            </div>
             <label class="text-white text-sm font-bold mb-2">
-                Diagnistico
+                Diagnostico
             </label>
-            <div class="border-2 border-dashed border-white p-4 my-5 rounded">
+            <div class="border-2 border-dashed border-white p-4 my-5 rounded text-white">
                 {{ diagnistico }}
             </div>
             <label class="text-white text-sm font-bold mb-2">
                 Tratamiento
             </label>
-            <div class="border-2 border-dashed border-white p-4 my-5 rounded">
+            <div class="border-2 border-dashed border-white p-4 my-5 rounded text-white">
                 {{ tratamiento }}
+            </div>
+
+            <div class="mb-4 flex flex-col items-start">
+                <label class="text-white text-sm font-bold mb-2" for="motivo">
+                    Motivo
+                </label>
+                <textarea 
+                    name="motivo" 
+                    id="motivo" 
+                    cols="30" 
+                    rows="3"
+                    unicorn:model="motivo" 
+                    class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3">
+                </textarea>
             </div>
         </div>
         <div class="flex flex-row-reverse gap-4">
-            <button class="rounded bg-[#166534] hover:bg-[#14532d] text-white px-8 py-2">
+            <button class="rounded bg-[#166534] hover:bg-[#14532d] text-white px-8 py-2" unicorn:click="guardar_consulta">
                 Guardar
             </button>
-            <button class="rounded prueba text-white px-8 py-2">
+            <button class="rounded prueba text-white px-8 py-2" onclick="show_pruebas('{{ estaVivo }}')">
                 Ingresar pruebas
             </button>
             <button class="rounded diagnistico text-white px-8 py-2" 
@@ -97,13 +137,20 @@
     $(document).ready(function() {
         $('#sintomas').select2();
         $('#signos').select2();
+        $('#pruebas_lab').select2();
+        $('#pruebas_post').select2();
+
+        $('#pruebasLab').hide();
+        $('#pruebasPost').hide();
     });
 
     function obtener_diagnostico() {
         const selectSintomas = document.getElementById("sintomas");
         const selectSignos = document.getElementById("signos");
+        const selectPruebasLab = document.getElementById("pruebas_lab");
+        const selectPruebasPost = document.getElementById("pruebas_post");
         
-        const selectedOptions = [...selectSintomas.selectedOptions, ...selectSignos.selectedOptions];
+        const selectedOptions = [...selectSintomas.selectedOptions, ...selectSignos.selectedOptions, ...selectPruebasLab.selectedOptions, selectPruebasPost.selectedOptions];
 
         // Obtener los valores de las opciones seleccionadas
         const selectedValues = Array.from(selectedOptions).map(option => option.value);
@@ -111,6 +158,14 @@
         if(selectedValues.length > 0) {
             const padecimientos = selectedValues.join(',')
             Unicorn.call('forms.consulta-form','get_consulta', padecimientos);
+        }
+    }
+
+    function show_pruebas(estaVivo) {
+        if (estaVivo) {
+            $('#pruebasLab').show();
+        } else {
+            $('#pruebasPost').show();
         }
     }
 </script>
