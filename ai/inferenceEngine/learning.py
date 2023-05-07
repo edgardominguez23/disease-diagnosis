@@ -11,9 +11,21 @@ def show_symptoms():
     return [*set(my_list)]
 
 
-def show_tests():
+def show_signs():
     my_list = [my_dict["X"]
-               for my_dict in prolog.query("test(X, _)")]
+               for my_dict in prolog.query("sign(X, _)")]
+    return [*set(my_list)]
+
+
+def show_lab_tests():
+    my_list = [my_dict["X"]
+               for my_dict in prolog.query("lab_test(X, _)")]
+    return [*set(my_list)]
+
+
+def show_postmortem_tests():
+    my_list = [my_dict["X"]
+               for my_dict in prolog.query("postmortem_test(X, _)")]
     return [*set(my_list)]
 
 
@@ -25,18 +37,17 @@ def show_medicines():
 
 def show_diseases():
     my_list = [my_dict["X"]
-               for my_dict in prolog.query("symptom(_, X)")]
-    my_list += [my_dict["X"]
-               for my_dict in prolog.query("test(_, X)")]
+               for my_dict in prolog.query("treatment(_, X)")]
     return [*set(my_list)]
 
 
 def is_fact(fact: str):
     """
     Examples:\n
-    "symptom(dolor,cancer)"\n
-    "test(niveles_altos_de_leucositos,cancer)"\n
-    "treatment(anestesia,dolor)"
+    "symptom(debilidad,ebola)"\n
+    "sign(tos,coronavirus)."\n
+    "test(examen_de_sangre,sifilis)"\n
+    "treatment(lumefantrina,malaria)"
     """
 
     fact = fact.replace(" ", "")
@@ -53,9 +64,10 @@ def is_fact(fact: str):
 def add_fact(fact: str):
     """
     Examples:\n
-    "symptom(dolor,cancer)"\n
-    "test(niveles_altos_de_leucositos,cancer)"\n
-    "treatment(anestesia,dolor)"
+    "symptom(debilidad,ebola)"\n
+    "sign(tos,coronavirus)."\n
+    "test(examen_de_sangre,sifilis)"\n
+    "treatment(lumefantrina,malaria)"
     """
 
     fact = fact.replace(" ", "")
@@ -79,9 +91,10 @@ def add_fact(fact: str):
 def delete_fact(fact: str):
     """
     Examples:\n
-    "symptom(dolor,cancer)"\n
-    "test(niveles_altos_de_leucositos,cancer)"\n
-    "treatment(anestesia,dolor)"
+    "symptom(debilidad,ebola)"\n
+    "sign(tos,coronavirus)."\n
+    "test(examen_de_sangre,sifilis)"\n
+    "treatment(lumefantrina,malaria)"
     """
 
     fact = fact.replace(" ", "")
