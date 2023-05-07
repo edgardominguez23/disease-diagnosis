@@ -33,7 +33,6 @@ urlpatterns = [
 
     path("consultas", login_required(views.index_consulta), name="consultas-list"),
     path("consultas/create", login_required(views.create_consulta), name="consultas-create"),
-    path("consultas/edit/<int:id>/", login_required(views.edit_consulta), name="consultas-edit"),
 
     path("roles", login_required(views.index_roles), name="roles-list"),
     path("permisos", login_required(views.index_permisos), name="permisos-list"),
