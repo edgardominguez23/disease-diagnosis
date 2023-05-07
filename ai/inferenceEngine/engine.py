@@ -19,13 +19,12 @@ def diagnose(conditions: list, queue):
     # Choose one desease
     disease = most_frequent(diseases)
 
+    queue.put(disease)
+
+def treatment(disease, queue):
     # Prescribe medicine
     medicines = [my_dict["X"]
-                 for my_dict in prolog.query(f"prescribe(X, {disease})")]
-
-    # Return the desease and the medicines
-    result = [disease]
-    result.append(medicines)
-
-    queue.put(result)
+        for my_dict in prolog.query(f"prescribe(X, {disease})")]
+    
+    queue.put(medicines)
     

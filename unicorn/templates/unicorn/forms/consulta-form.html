@@ -11,6 +11,24 @@
         .item {
             padding: 20px;
         }
+        .tratamiento {
+            background-color: #3b82f6;
+        }
+        .tratamiento:hover {
+            background-color: #1a62d6;
+        }
+        .diagnistico {
+            background-color: #a79d15;
+        }
+        .diagnistico:hover {
+            background-color: #eccd1a;
+        }
+        .prueba {
+            background-color: #1aa38c;
+        }
+        .prueba:hover {
+            background-color: #18995d;
+        }
     </style>
 
     <!-- put component code here -->
@@ -20,7 +38,7 @@
         </h1>
         <div>
             {% csrf_token %}
-            <div class="mb-4 flex flex-col items-start">
+            <div class="mb-4 flex flex-col items-start" unicorn:ignore>
                 <label class="text-white text-sm font-bold mb-2" for="sintomas">
                     Sintomas
                 </label>
@@ -33,7 +51,7 @@
                 {% endfor %}
                 </select>
             </div>
-            <div class="mb-4 flex flex-col items-start">
+            <div class="mb-4 flex flex-col items-start" unicorn:ignore>
                 <label class="text-white text-sm font-bold mb-2" for="signos">
                     Signos
                 </label>
@@ -47,26 +65,37 @@
                 </select>
             </div>
             <label class="text-white text-sm font-bold mb-2">
-                Pruebas
+                Diagnistico
             </label>
             <div class="border-2 border-dashed border-white p-4 my-5 rounded">
-                {{ test }}
+                {{ diagnistico }}
             </div>
         </div>
-        <div class="flex flex-row-reverse ...">
-                <button class="rounded bg-[#166534] hover:bg-[#14532d] text-white px-8 py-2" 
-                        onclick="obtner_diagnostico()"
-                >
-                    Obtener diagnostico
-                </button>
+        <div class="flex flex-row-reverse gap-4">
             <button class="rounded bg-[#166534] hover:bg-[#14532d] text-white px-8 py-2">
                 Guardar
+            </button>
+            <button class="rounded prueba text-white px-8 py-2">
+                Ingresar pruebas
+            </button>
+            <button class="rounded diagnistico text-white px-8 py-2" 
+                    onclick="obtner_diagnostico()"
+            >
+                Obtener diagnostico
+            </button>
+            <button class="rounded tratamiento text-white px-8 py-2">
+                Obtener tratamiento
             </button>
         </div>
     </div>
 </div>
 
 <script>
+    $(document).ready(function() {
+        $('#sintomas').select2();
+        $('#signos').select2();
+    });
+
     function obtner_diagnostico() {
         const selectSintomas = document.getElementById("sintomas");
         const selectSignos = document.getElementById("signos");
@@ -78,9 +107,7 @@
 
         if(selectedValues.length > 0) {
             const padecimientos = selectedValues.join(',')
-            console.log("Opciones seleccionadas:", padecimientos);
             Unicorn.call('forms.consulta-form','get_consulta', padecimientos);
         }
-        //console.log("Opciones seleccionadas:", selectedValues);
     }
 </script>
