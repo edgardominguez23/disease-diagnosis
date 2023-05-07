@@ -31,7 +31,6 @@ urlpatterns = [
     path("citas/create", login_required(views.create_cita), name="citas-create"),
     path("citas/edit/<int:id>/", login_required(views.edit_cita), name="citas-edit"),
 
-    path("consultas", login_required(views.index_consulta), name="consultas-list"),
     path("citas/<int:id>/consulta", login_required(views.create_consulta), name="consultas-create"),
 
     path("roles", login_required(views.index_roles), name="roles-list"),
