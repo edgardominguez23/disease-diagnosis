@@ -3,7 +3,7 @@
     <!-- put component code here -->
     <div class="rounded bg-[#5A5A94] px-8 shadow-2xl w-full py-10">
         <h1 class="text-white font-bold text-2xl mb-4">
-            {% if paciente %} Editar {% else %} Crear {% endif %} Enfermedad
+            {% if enfermedad %} Editar {% else %} Crear {% endif %} Enfermedad
         </h1>
         
         <form>
@@ -20,13 +20,99 @@
                     unicorn:model="nombre"
                     placeholder=""/>
                 <span class="error">{{ unicorn.errors.nombre.0.message }}</span>
+
+                <div class="mb-4 flex flex-col items-start" unicorn:ignore>
+                    <label class="text-white text-sm font-bold mb-2" for="sintomas">
+                        Sintomas
+                    </label>
+                    <select
+                        class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" 
+                        id="sintomas"
+                        multiple>
+                    {% for sintoma in sintomas %}
+                        <option value="{{ sintoma.id }}">{{ sintoma.nombre }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-4 flex flex-col items-start" unicorn:ignore>
+                    <label class="text-white text-sm font-bold mb-2" for="signos">
+                        Signo
+                    </label>
+                    <select
+                        class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" 
+                        id="signos"
+                        multiple>
+                    {% for signo in signos %}
+                        <option value="{{ signo.id }}">{{ signo.nombre }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-4 flex flex-col items-start" unicorn:ignore>
+                    <label class="text-white text-sm font-bold mb-2" for="pruebas_lab">
+                        Pruebas de laboratorio
+                    </label>
+                    <select
+                        class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" 
+                        id="pruebas_lab"
+                        multiple>
+                    {% for prueba_lab in pruebas_lab %}
+                        <option value="{{ prueba_lab.id }}">{{ prueba_lab.nombre }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-4 flex flex-col items-start" unicorn:ignore>
+                    <label class="text-white text-sm font-bold mb-2" for="pruebas_post">
+                        Pruebas post-mortem
+                    </label>
+                    <select
+                        class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" 
+                        id="pruebas_post"
+                        multiple>
+                    {% for prueba_post in pruebas_post %}
+                        <option value="{{ prueba_post.id }}">{{ prueba_post.nombre }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
             </div>
         </form>
         <div class="flex flex-row-reverse ...">
             <div>
-                <button class="rounded bg-[#166534] hover:bg-[#14532d] w-full text-white px-8 py-2" unicorn:click="save_paciente">Guardar</button>
+                <button class="rounded bg-[#166534] hover:bg-[#14532d] w-full text-white px-8 py-2" onclick="guardar()">Guardar</button>
             </div>
         </div>
     </div>
 </div>
 
+<script>
+    $(document).ready(function() {
+        $('#sintomas').select2();
+        $('#signos').select2();
+        $('#pruebas_lab').select2();
+        $('#pruebas_post').select2();
+    });
+
+    function guardar() {
+        const selectSintomas = Array.from(document.getElementById("sintomas").selectedOptions).map(option => option.value);
+        const selectSignos = Array.from(document.getElementById("signos").selectedOptions).map(option => option.value);
+        const selectPruebasLab = Array.from(document.getElementById("pruebas_lab").selectedOptions).map(option => option.value);
+        const selectPruebasPost = Array.from(document.getElementById("pruebas_post").selectedOptions).map(option => option.value);
+
+        Unicorn.call('forms.enfermedad-form',
+                     'save_enfermedad', 
+                     selectSintomas.join(','), 
+                     selectSignos.join(','), 
+                     selectPruebasLab.join(','), 
+                     selectPruebasPost.join(',')
+                    );
+    }
+
+    function cargar_datos(sintomas, signos, pruebas_lab, pruebas_post) {        
+        $("#sintomas").val(sintomas).trigger("change");
+        $("#signos").val(signos).trigger("change");
+        $("#pruebas_lab").val(pruebas_lab).trigger("change");
+        $("#pruebas_post").val(pruebas_post).trigger("change");
+    }
+</script>

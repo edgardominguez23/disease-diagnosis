@@ -52,7 +52,7 @@ def is_fact(fact: str):
 
     fact = fact.replace(" ", "")
 
-    with open("test.pl", "r") as file:  # Read mode
+    with open("ai/inferenceEngine/knowledge_base.pl", "r") as file:  # Read mode
         lines = file.readlines()
 
     if f"{fact}.\n" in lines:
@@ -73,10 +73,10 @@ def add_fact(fact: str):
     fact = fact.replace(" ", "")
     relation = fact.split("(")[0]
 
-    with open("test.pl", "r") as file:  # Read mode
+    with open("ai/inferenceEngine/knowledge_base.pl", "r") as file:  # Read mode
         lines = file.readlines()
 
-    with open("test.pl", "w") as file:  # Write mode
+    with open("ai/inferenceEngine/knowledge_base.pl", "w") as file:  # Write mode
         for number, line in enumerate(lines):
             if END_FACTS in line:
                 break
@@ -99,10 +99,9 @@ def delete_fact(fact: str):
 
     fact = fact.replace(" ", "")
 
-    with open("test.pl", "r") as file:  # Read mode
+    with open("ai/inferenceEngine/knowledge_base.pl", "r") as file:  # Read mode
         lines = file.readlines()
 
-    with open("test.pl", "w") as file:  # Write mode
-        if is_fact(fact):
-            lines.remove(f"{fact}.\n")
-            file.writelines(lines)
+    with open("ai/inferenceEngine/knowledge_base.pl", "w") as file:  # Write mode
+        lines.remove(f"{fact}.\n")
+        file.writelines(lines)

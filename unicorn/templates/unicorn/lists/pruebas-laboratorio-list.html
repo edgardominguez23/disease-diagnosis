@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for p in pruebas %}
+                    {% for p in page.object_list %}
                     <tr>
                         <td class="border border-slate-700 py-4 px-4">{{p.id}}</td>
                         <td class="border border-slate-700 py-4 px-4">{{p.nombre}}</td>
@@ -37,6 +37,24 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <nav class="text-white">
+                <ul class="list-style-none flex">
+                  <li unicorn:click="regresar_pagina">
+                    <a class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                      ><i class="fa-solid fa-arrow-left"></i></a>
+                  </li>
+                  {% for p in paginator.page_range %}
+                  <li unicorn:click="cambiar_pagina({{p}})">
+                    <a class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                      >{{ p }}</a>
+                  </li>
+                  {% endfor %}
+                  <li unicorn:click="siguiente_pagina">
+                    <a class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                      ><i class="fa-solid fa-arrow-right"></i></a>
+                  </li>
+                </ul>
+            </nav>
         </div>
     </div>
 
