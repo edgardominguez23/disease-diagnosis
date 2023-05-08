@@ -1,0 +1,268 @@
+[
+    {
+        "medicine": "ritonavir",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 24,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "doxiciclina",
+        "quantity_per_kg": 3,
+        "quantity_unit": "mg",
+        "period": 12,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "molecula_AVI_7527",
+        "quantity_per_kg": 1,
+        "quantity_unit": "mg",
+        "period": 8,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "antitoxina_difterica",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 6,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "etambutol",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 24,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "preparado_de_globulina_hiperinmunizado",
+        "quantity_per_kg": 1,
+        "quantity_unit": "mg",
+        "period": 12,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "mefloquina",
+        "quantity_per_kg": 4,
+        "quantity_unit": "mg",
+        "period": 8,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "antivirales",
+        "quantity_per_kg": 1,
+        "quantity_unit": "mg",
+        "period": 6,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "isoniacida",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 24,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "remdesivir",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 8,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "ivermectina",
+        "quantity_per_kg": 1,
+        "quantity_unit": "mg",
+        "period": 6,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "antiviral_BCX4420",
+        "quantity_per_kg": 3,
+        "quantity_unit": "mg",
+        "period": 24,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "piracinamida",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 12,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "dexametasona",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 8,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "paracetamol",
+        "quantity_per_kg": 3,
+        "quantity_unit": "mg",
+        "period": 6,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "ciprofloxacino",
+        "quantity_per_kg": 3,
+        "quantity_unit": "mg",
+        "period": 24,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "eritromicina",
+        "quantity_per_kg": 3,
+        "quantity_unit": "mg",
+        "period": 12,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "suero_ZMapp",
+        "quantity_per_kg": 1,
+        "quantity_unit": "mg",
+        "period": 8,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "clindamicina",
+        "quantity_per_kg": 4,
+        "quantity_unit": "mg",
+        "period": 6,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "atovacuona_proguanil",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 24,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "artesunato",
+        "quantity_per_kg": 1,
+        "quantity_unit": "mg",
+        "period": 12,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "lopinavir",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 8,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "cloranfenicol",
+        "quantity_per_kg": 4,
+        "quantity_unit": "mg",
+        "period": 6,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "estreptomicina",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 24,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "gentamicina",
+        "quantity_per_kg": 3,
+        "quantity_unit": "mg",
+        "period": 8,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "dapsona",
+        "quantity_per_kg": 3,
+        "quantity_unit": "mg",
+        "period": 6,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "artemisinina",
+        "quantity_per_kg": 1,
+        "quantity_unit": "mg",
+        "period": 24,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "cloroquina",
+        "quantity_per_kg": 4,
+        "quantity_unit": "mg",
+        "period": 12,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "rifampicina",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 8,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "artemeter",
+        "quantity_per_kg": 1,
+        "quantity_unit": "mg",
+        "period": 6,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "lumefantrina",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 24,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "clofazimina",
+        "quantity_per_kg": 1,
+        "quantity_unit": "mg",
+        "period": 12,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "hidroxicloroquina",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 8,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "favipiravir",
+        "quantity_per_kg": 3,
+        "quantity_unit": "mg",
+        "period": 6,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "penicilina",
+        "quantity_per_kg": 4,
+        "quantity_unit": "mg",
+        "period": 24,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "quinina",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 12,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "plasma_de_convaleciente",
+        "quantity_per_kg": 2,
+        "quantity_unit": "mg",
+        "period": 8,
+        "period_unit": "horas"
+    },
+    {
+        "medicine": "antibiotico",
+        "quantity_per_kg": 1,
+        "quantity_unit": "mg",
+        "period": 6,
+        "period_unit": "horas"
+    }
+]

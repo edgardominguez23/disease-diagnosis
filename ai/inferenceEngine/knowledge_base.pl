@@ -106,8 +106,6 @@ treatment(lopinavir,coronavirus).
 treatment(hidroxicloroquina,coronavirus).
 treatment(dexametasona,coronavirus).
 treatment(ivermectina,coronavirus).
-treatment(soporte_respiratorio,coronavirus).
-treatment(tomar_liquidos,ebola).
 treatment(plasma_de_convaleciente,ebola).
 treatment(suero_ZMapp,ebola).
 treatment(preparado_de_globulina_hiperinmunizado,ebola).
