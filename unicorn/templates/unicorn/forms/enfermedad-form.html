@@ -108,4 +108,11 @@
                      selectPruebasPost.join(',')
                     );
     }
+
+    function cargar_datos(sintomas, signos, pruebas_lab, pruebas_post) {        
+        $("#sintomas").val(sintomas).trigger("change");
+        $("#signos").val(signos).trigger("change");
+        $("#pruebas_lab").val(pruebas_lab).trigger("change");
+        $("#pruebas_post").val(pruebas_post).trigger("change");
+    }
 </script>

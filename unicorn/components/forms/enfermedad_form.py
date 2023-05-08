@@ -27,6 +27,12 @@ class EnfermedadFormView(UnicornView):
     def mount(self):
         if self.enfermedad:
             self.nombre = self.enfermedad.nombre
+            sintomas = list(self.enfermedad.sintomas.values_list('id', flat=True))
+            signos = list(self.enfermedad.signos.values_list('id', flat=True))
+            pruebas_lab = list(self.enfermedad.pruebasLaboratorio.values_list('id', flat=True))
+            pruebas_post = list(self.enfermedad.pruebasPostmorten.values_list('id', flat=True))
+
+            self.call("cargar_datos", sintomas, signos, pruebas_lab, pruebas_post)
 
     def save_enfermedad(self, sintomas, signos, pruebas_lab, pruebas_post):
         self.sintomas = sintomas.split(",")
@@ -38,6 +44,13 @@ class EnfermedadFormView(UnicornView):
             if self.enfermedad:
                 self.enfermedad.nombre = self.nombre.lower()
                 self.enfermedad.save()
+                self.delete_enfermedad_prolog(self.enfermedad)
+                
+                self.enfermedad.sintomas.set([] if self.sintomas[0] == '' else self.sintomas)
+                self.enfermedad.signos.set([] if self.signos[0] == '' else self.sintomas)
+                self.enfermedad.pruebasLaboratorio.set([] if self.pruebas_lab[0] == '' else self.pruebas_lab)
+                self.enfermedad.pruebasPostmorten.set([] if self.pruebas_post[0] == '' else self.pruebas_post)
+
                 self.save_enfermedad_prolog(self.enfermedad)
 
                 self.call("alerta_actualizacion_satisfactoria")
@@ -91,5 +104,35 @@ class EnfermedadFormView(UnicornView):
                 fact = f"postmortem_test({PruebaPostmorten.objects.get(id=prueba_post).nombre},{enfermedad.nombre})"
                 if not is_fact(fact):
                     add_fact(fact)
+
+    def delete_enfermedad_prolog(self, enfermedad):
+        sintomas = enfermedad.sintomas.values_list('nombre', flat=True)
+        signos = enfermedad.signos.values_list('nombre', flat=True)
+        pruebas_lab = enfermedad.pruebasLaboratorio.values_list('nombre', flat=True)
+        pruebas_post = enfermedad.pruebasPostmorten.values_list('nombre', flat=True)
+
+        if len(list(sintomas)) > 0:
+            for sintoma in list(sintomas):
+                fact = f"symptom({sintoma},{enfermedad.nombre})"
+                if is_fact(fact):
+                    delete_fact(fact)
+
+        if len(list(signos)) > 0:
+            for signo in list(signos):
+                fact = f"sign({signo},{enfermedad.nombre})"
+                if is_fact(fact):
+                    delete_fact(fact)
+
+        if len(list(pruebas_lab)) > 0:
+            for prueba_lab in list(pruebas_lab):
+                fact = f"lab_test({prueba_lab},{enfermedad.nombre})"
+                if is_fact(fact):
+                    delete_fact(fact)
+
+        if len(list(pruebas_post)) > 0:
+            for prueba_post in list(pruebas_post):
+                fact = f"postmortem_test({prueba_post},{enfermedad.nombre})"
+                if is_fact(fact):
+                    delete_fact(fact)
 
 

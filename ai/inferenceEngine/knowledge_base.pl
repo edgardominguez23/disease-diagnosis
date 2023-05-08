@@ -1,4 +1,6 @@
 %Facts, soruce: https://cuidateplus.marca.com/enfermedades/infecciosas.html
+symptom(fatiga,test).
+symptom(tos,test).
 symptom(cansancio,coronavirus).
 symptom(perdida_del_olfato,coronavirus).
 symptom(perdida_del_gusto,coronavirus).
