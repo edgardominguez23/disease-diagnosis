@@ -1,0 +1,74 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$hCLSRa89MkHgaFt4BMl5Em$PM6OSKgfBwz0wTwiV7p71OtU6+dvvDTLhqhhnRDG1Hk=",
+        "last_login": "2023-05-07T23:46:24.141Z",
+        "is_superuser": true,
+        "username": "edgardominguez23",
+        "first_name": "Edgar Alan",
+        "last_name": "Dominguez Murillo",
+        "email": "edgar@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-04-09T00:51:24.366Z",
+        "groups": [1],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$hCLSRa89MkHgaFt4BMl5Em$PM6OSKgfBwz0wTwiV7p71OtU6+dvvDTLhqhhnRDG1Hk=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "diegoruiz",
+        "first_name": "Diego",
+        "last_name": "Ruiz",
+        "email": "diego@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-04-09T01:19:44.704Z",
+        "groups": [2],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$hCLSRa89MkHgaFt4BMl5Em$PM6OSKgfBwz0wTwiV7p71OtU6+dvvDTLhqhhnRDG1Hk=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "luisperez1990",
+        "first_name": "Luis",
+        "last_name": "Perez Lopez",
+        "email": "luis@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-05-01T00:42:09.718Z",
+        "groups": [3],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$hCLSRa89MkHgaFt4BMl5Em$PM6OSKgfBwz0wTwiV7p71OtU6+dvvDTLhqhhnRDG1Hk=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "maria1980",
+        "first_name": "Maria",
+        "last_name": "Rosales",
+        "email": "maria@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-05-01T00:42:09.718Z",
+        "groups": [2],
+        "user_permissions": []
+    }
+}
+]

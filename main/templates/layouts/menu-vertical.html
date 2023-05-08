@@ -12,65 +12,79 @@
     </div>
   </h2>
   <ul class="px-4 py-4">
+
+    {% if user.groups.first.name == "administrador" %}
     <a href="{% url 'roles-list' %}">
       <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
         <i class="fa-solid fa-gears fa-lg mr-3"></i> Roles
       </li>
     </a>
+    {% endif %}
 
-    <a href="{% url 'permisos-list' %}">
-      <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
-        <i class="fa-solid fa-key fa-lg mr-3"></i> Permisos
-      </li>
-    </a>
-
+    {% if user.groups.first.name == "administrador" %}
     <a href="{% url 'usuarios-list' %}">
       <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
         <i class="fa-solid fa-user-shield fa-lg mr-3"></i> Usuarios
       </li>
     </a>
+    {% endif %}
 
+    {% if user.groups.first.name == "administrador" or user.groups.first.name == "secretario" %}
     <a href="{% url 'consultorios-list' %}">
       <li id="consultorios" class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
         <i class="fa-solid fa-notes-medical fa-lg mr-3"></i> Consultorios
       </li>
     </a>
+    {% endif %}
 
+    {% if user.groups.first.name == "administrador" or user.groups.first.name == "secretario" or user.groups.first.name == "doctor" %}
     <a href="{% url 'pacientes-list' %}">
       <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
         <i class="fa-solid fa-users fa-lg mr-3"></i> Pacientes
       </li>
     </a>
+    {% endif %}
 
+    {% if user.groups.first.name == "administrador" or user.groups.first.name == "secretario" or user.groups.first.name == "doctor" %}
     <a href="{% url 'citas-list' %}">
       <li id="citas" class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
         <i class="fa-solid fa-calendar fa-lg mr-3"></i> Citas
       </li>
     </a>
+    {% endif %}
 
+    {% if user.groups.first.name == "administrador" %}
     <a href="{% url 'enfermedades-list' %}">
       <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
         <i class="fa-solid fa-disease fa-lg mr-3"></i> Enfermedades
       </li>
     </a>
-    
+    {% endif %}
+
+    {% if user.groups.first.name == "administrador" %}
     <a href="{% url 'signos-list' %}">
       <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
         <i class="fa-solid fa-heart-pulse fa-lg mr-3"></i> Signos
       </li>
     </a>
-    
+    {% endif %}
+
+    {% if user.groups.first.name == "administrador" %}
     <a href="{% url 'sintomas-list' %}">
       <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
         <i class="fa-solid fa-person fa-lg mr-3"></i> Sintomas
       </li>
     </a>
-    
+    {% endif %}
+
+    {% if user.groups.first.name == "administrador" %}
     <a href="{% url 'pruebas-list' %}">
       <li class="py-2 cursor-pointer hover:text-gray-300 rounded-md px-4 py-4">
         <i class="fa-solid fa-clipboard-list fa-lg mr-3"></i> Pruebas
       </li>
     </a>
+    {% endif %}
+
   </ul>
 </nav>
 
