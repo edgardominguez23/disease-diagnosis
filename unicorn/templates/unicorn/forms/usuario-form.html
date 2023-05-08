@@ -63,30 +63,26 @@
                 <span class="error">{{ unicorn.errors.email.0.message }}</span>
             </div>
             <div class="mb-4 flex flex-col items-start">
-                <label class="text-white text-sm font-bold mb-2" for="password1">
+                <label class="text-white text-sm font-bold mb-2" for="rol">
+                    Rol
+                </label>
+                <select name="rol" class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3" unicorn:model="rol">
+                    {% for r in roles %}
+                        <option value="{{ r.id }}">{{ r.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-4 flex flex-col items-start">
+                <label class="text-white text-sm font-bold mb-2" for="password">
                     Contraseña
                 </label>
                 <input
                     class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
                     type="password"
-                    id="password1"
-                    name="password1"
-                    unicorn:model="password1"
+                    id="password"
+                    name="password"
+                    unicorn:model="password"
                     placeholder=""/>
-                <span class="error">{{ unicorn.errors.password1.0.message }}</span>
-            </div>
-            <div class="mb-4 flex flex-col items-start">
-                <label class="text-white text-sm font-bold mb-2" for="password2">
-                    Confirmar contraseña
-                </label>
-                <input
-                    class="border border-white rounded-md py-2 px-3 bg-[#5A5A94] text-white w-full pl-3"
-                    type="password"
-                    id="password2"
-                    name="password2"
-                    unicorn:model="password2"
-                    placeholder=""/>
-                <span class="error">{{ unicorn.errors.password2.0.message }}</span>
             </div>
         </form>
         <div class="flex flex-row-reverse ...">

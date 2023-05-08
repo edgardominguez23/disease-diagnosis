@@ -111,11 +111,8 @@ class UsuarioForm(forms.Form):
                 'required': _('Este campo correo es requerido.'),
                 'max_length': _('El campo correo debe tener como máximo 50 caracteres.'),
             })
-    password1 = forms.CharField(max_length=50, required=True, error_messages={
-                'required': _('Este campo contraseña es requerido.'),
-            })
-    password2 = forms.CharField(max_length=50, required=True, error_messages={
-                'required': _('Este campo contraseña es requerido.'),
+    rol = forms.CharField(max_length=50, required=True, error_messages={
+                'required': _('Este campo rol es requerido.'),
             })
     
 class CitaForm(forms.Form):
