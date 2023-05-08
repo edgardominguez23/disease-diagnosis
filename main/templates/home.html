@@ -4,11 +4,33 @@
 
 <div>
     {% if user.is_authenticated %}
-    <div class="alert alert-success" role="alert">
-        <h3>Welcome {{ user.username }}!</h3>
-        <a href="{% url 'logout' %}">Logout?</a>
+    <div class="alert alert-success text-white text-center" role="alert">
+        <h3 class="font-bold">Bienvenido al Sistema de Diagnóstico de enfermedades infecciosas!</h3>
+        <h2 class="mb-4">Usuario: {{ user.last_name }} {{ user.first_name }}</h2>
+
+        <a class="bg-red-600 px-4 py-2 rounded hover:bg-red-700" href="{% url 'logout' %}">Cerrar sesion</a>
     </div>
     {% endif %}
+
+    <div class="alert alert-success text-white mt-5">
+        <h1 class="text-center font-bold">Sistema de Diagnóstico de enfermedades infecciosas</h1>
+        <div class="text-justify text-center mt-5">
+            Un sistema de este tipo podría estar diseñado para ayudar a los médicos y profesionales de la salud a identificar 
+            enfermedades infecciosas en los pacientes. El sistema podría incluir las siguientes características:
+            Interfaz de usuario: el sistema tendría una interfaz de usuario intuitiva y fácil de usar, que permita a los médicos 
+            y profesionales de la salud ingresar los síntomas y otros detalles relevantes del paciente.
+            Base de datos de enfermedades: el sistema tendría una base de datos de enfermedades infecciosas, que contenga información 
+            detallada sobre las distintas enfermedades, incluyendo los síntomas asociados, las causas, los tratamientos, las 
+            complicaciones, entre otros.
+            Algoritmos de diagnóstico: el sistema utilizaría algoritmos de diagnóstico para analizar los síntomas ingresados por el médico 
+            y determinar qué enfermedad es la más probable.  
+            Integración con sistemas de información médica: el sistema estaría integrado con sistemas de información médica, permitiendo 
+            al médico tener acceso a información relevante del paciente, como su historial médico, resultados de pruebas de laboratorio, 
+            entre otros.
+            Recomendaciones de tratamiento: una vez que el sistema ha identificado una enfermedad, proporcionaría recomendaciones de tratamiento 
+            específicas para esa enfermedad.
+        </div>
+    </div>
 </div>
 
 {% endblock %}
