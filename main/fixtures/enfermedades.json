@@ -4,6 +4,7 @@
         "pk": 1,    
         "fields": {
             "nombre": "coronavirus",
+            "pruebasLaboratorio": [1, 2, 3],
             "created_at": "2023-05-01T00:00:00Z",
             "updated_at": "2023-05-01T00:00:00Z"
         }
@@ -13,6 +14,7 @@
         "pk": 2,    
         "fields": {
             "nombre": "ebola",
+            "pruebasLaboratorio": [1, 4, 5, 6, 7],
             "created_at": "2023-05-01T00:00:00Z",
             "updated_at": "2023-05-01T00:00:00Z"
         }
@@ -22,6 +24,8 @@
         "pk": 3,    
         "fields": {
             "nombre": "lepra",
+            "pruebasPostmorten": [1],
+            "pruebasLaboratorio": [8],
             "created_at": "2023-05-01T00:00:00Z",
             "updated_at": "2023-05-01T00:00:00Z"
         }
@@ -31,6 +35,7 @@
         "pk": 4,    
         "fields": {
             "nombre": "malaria",
+            "pruebasLaboratorio": [9, 10],
             "created_at": "2023-05-01T00:00:00Z",
             "updated_at": "2023-05-01T00:00:00Z"
         }
@@ -40,6 +45,7 @@
         "pk": 5,    
         "fields": {
             "nombre": "peste",
+            "pruebasLaboratorio": [11],
             "created_at": "2023-05-01T00:00:00Z",
             "updated_at": "2023-05-01T00:00:00Z"
         }
@@ -49,6 +55,7 @@
         "pk": 6,    
         "fields": {
             "nombre": "sifilis",
+            "pruebasLaboratorio": [12, 13, 14, 15, 16, 17],
             "created_at": "2023-05-01T00:00:00Z",
             "updated_at": "2023-05-01T00:00:00Z"
         }
@@ -58,6 +65,8 @@
         "pk": 7,    
         "fields": {
             "nombre": "tuberculosis",
+            "pruebasPostmorten": [2, 3],
+            "pruebasLaboratorio": [18, 19, 20, 21],
             "created_at": "2023-05-01T00:00:00Z",
             "updated_at": "2023-05-01T00:00:00Z"
         }
@@ -67,6 +76,7 @@
         "pk": 8,    
         "fields": {
             "nombre": "difteria",
+            "pruebasLaboratorio": [22, 23, 24],
             "created_at": "2023-05-01T00:00:00Z",
             "updated_at": "2023-05-01T00:00:00Z"
         }
