@@ -103,6 +103,5 @@ def delete_fact(fact: str):
         lines = file.readlines()
 
     with open("ai/inferenceEngine/knowledge_base.pl", "w") as file:  # Write mode
-        if is_fact(fact):
-            lines.remove(f"{fact}.\n")
-            file.writelines(lines)
+        lines.remove(f"{fact}.\n")
+        file.writelines(lines)
